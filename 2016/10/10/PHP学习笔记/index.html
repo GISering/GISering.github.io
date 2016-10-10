@@ -1,0 +1,815 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,基础," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="很久之前学PHP时记得一些基础语法笔记，现在自己搭建了博客就把这个上传了。看了这个笔记发现现在再也没有以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远，借此笔记激励一下自己！！！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP学习笔记">
+<meta property="og:url" content="http://GISering.github.io/2016/10/10/PHP学习笔记/index.html">
+<meta property="og:site_name" content="Oozie's BLOG">
+<meta property="og:description" content="很久之前学PHP时记得一些基础语法笔记，现在自己搭建了博客就把这个上传了。看了这个笔记发现现在再也没有以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远，借此笔记激励一下自己！！！">
+<meta property="og:updated_time" content="2016-10-10T13:23:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP学习笔记">
+<meta name="twitter:description" content="很久之前学PHP时记得一些基础语法笔记，现在自己搭建了博客就把这个上传了。看了这个笔记发现现在再也没有以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远，借此笔记激励一下自己！！！">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6339080000263685000',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://GISering.github.io/2016/10/10/PHP学习笔记/"/>
+
+
+  <title> PHP学习笔记 | Oozie's BLOG </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Oozie's BLOG</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">好记性，不如小博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-10T21:05:27+08:00" content="2016-10-10">
+              2016-10-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/10/PHP学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/PHP学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+         <span id="/2016/10/10/PHP学习笔记/"class="leancloud_visitors"  data-flag-title="PHP学习笔记">
+            &nbsp; | &nbsp; 阅读次数
+            </span>
+      
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>很久之前学PHP时记得一些基础语法笔记，现在自己搭建了博客就把这个上传了。看了这个笔记发现现在再也没有以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远，借此笔记激励一下自己！！！</p>
+<a id="more"></a>
+<h1 id="PHP引用类型"><a href="#PHP引用类型" class="headerlink" title="PHP引用类型"></a>PHP引用类型</h1><p><strong>PHP引用类型</strong>类似于C++语言中的“引用类型”，相当于是一个变量的别名，<strong>语法如下：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	$b = &amp;$a;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>其中变量<strong><em>b</em></strong>是变量<strong><em>a</em></strong>的引用。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><code>注意:</code></h2><ul>
+<li>只有变量才有引用</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$b = &amp;<span class="number">100</span> <span class="comment">//错误</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>一个变量值（如<strong><em>b</em></strong>）发生变化，另一个变量的值(<strong><em>a</em></strong>)也会发生变化</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		$b = <span class="number">50</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"a = $a&lt;br&gt;"</span> ;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"b = $b"</span> ;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>在使用<code>unset()</code>函数时，如果有引用关系，只是解除了这种引用关系，删除了一个别名，而另一个还在</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		<span class="keyword">unset</span>(a)</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">isset</span>($b))</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"这个变量存在"</span>;<span class="comment">//输出</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"这个变量不存在"</span>;</div><div class="line">		&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果两个变量是引用关系，如果赋给其中一个变量的值是新的引用的话，择改变引用关系</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		$c = <span class="number">50</span>;</div><div class="line">		$b = &amp;$c;</div><div class="line">		$b = <span class="number">25</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"a = $a&lt;br&gt;"</span> ;<span class="comment">// a = 100</span></div><div class="line">		<span class="keyword">echo</span> <span class="string">"b = $b&lt;br&gt;"</span> ;		<span class="comment">// b = 25</span></div><div class="line">		<span class="keyword">echo</span> <span class="string">"c = $c"</span> ;		<span class="comment">// c = 25</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="PHP布尔类型"><a href="#PHP布尔类型" class="headerlink" title="PHP布尔类型"></a>PHP布尔类型</h1><ol>
+<li><code>boolean</code>型的变量值可以为<code>true</code>、<code>false</code></li>
+<li>当其他类型的变量转为布尔型时，以下这些值代表<code>false</code><strong>:</strong><ul>
+<li>整型：<code>0</code></li>
+<li>浮点型：<code>0</code></li>
+<li>字符串：<code>&quot;&quot;</code>、<code>&quot;0&quot;</code></li>
+<li>数组：<code>array()</code></li>
+<li>特殊类型：<code>Null</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="PHP字符串类型"><a href="#PHP字符串类型" class="headerlink" title="PHP字符串类型"></a>PHP字符串类型</h1><h2 id="字符串声明"><a href="#字符串声明" class="headerlink" title="字符串声明"></a>字符串声明</h2><h3 id="使用-quot-quot-和-39-39-声明"><a href="#使用-quot-quot-和-39-39-声明" class="headerlink" title="使用&quot;&quot;和&#39;&#39;声明"></a>使用<code>&quot;&quot;</code>和<code>&#39;&#39;</code>声明</h3><ol>
+<li>在<strong>PHP</strong>中<strong>一个</strong>字符或者<strong>多个</strong>字符都是字符串；</li>
+<li>在<strong>PHP</strong>中声明一个字符串必须用“<em>单引号</em>”或“<em>双引号</em>”引起来；</li>
+<li>在单引号中不能使用<strong>单引号</strong>和<strong>双引号</strong>；</li>
+<li>在双引号中可以使用<strong>单引号</strong>，但不能使用<strong>双引号</strong>；</li>
+<li>如果想在字符串中使用<strong>双引号</strong>对某些短语进行强调，可以使用转移字符<code>&quot;\&quot;</code>。<h3 id="使用定界符-lt-lt-lt-任意字符串"><a href="#使用定界符-lt-lt-lt-任意字符串" class="headerlink" title="使用定界符&lt;&lt;&lt;+任意字符串"></a>使用<strong>定界符</strong><code>&lt;&lt;&lt;+任意字符串</code></h3></li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$var = <span class="number">100</span></div><div class="line">	$str = &lt;&lt;&lt;ss <span class="comment">//ss可以是任意字符串，后面紧跟回车符</span></div><div class="line">	Hello World! This is a <span class="string">"Demo"</span>;\n</div><div class="line">	The value of \$var is $var;</div><div class="line">ss;<span class="comment">//ss必须顶格写</span></div><div class="line">	<span class="keyword">echo</span> $str;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="单引号和双引号的区别"><a href="#单引号和双引号的区别" class="headerlink" title="单引号和双引号的区别"></a>单引号和双引号的区别</h2><ol>
+<li>在双引号中可以解析变量，而在单引号中却不可以 </li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The value of a is $a."</span>;<span class="comment">//The Value of a is 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">"The value of a is&#123;$a&#125;."</span>;<span class="comment">//The Value of a is 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'The value of a is $a.'</span>;<span class="comment">//The value of a is $a.</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>在双引号中可以使用转义字符，而在单引号却不可以(只能转义<strong><em>单引号</em></strong>和<strong><em>转义字符</em></strong>)</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The Value \$a = $a."</span>.;<span class="comment">// The value $a = 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'The Value \$a = $a.'</span>;<span class="comment">//The value \$a = $a.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'This is a \'string\' demo.'</span>;<span class="comment">//This is a 'string' demo;</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h1><h2 id="常量的声明、命名"><a href="#常量的声明、命名" class="headerlink" title="常量的声明、命名"></a>常量的声明、命名</h2><ol>
+<li><strong>声明</strong>：使用函数<code>define(string name, mixedtype value)</code></li>
+<li><strong>命名</strong>：以<strong>下划线</strong>或<strong>字母</strong>开始的字符串、通常大写</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	define(<span class="string">"CONSTANT"</span>, <span class="number">100</span>); <span class="comment">//CONSTANT是一个值为100的整型常量</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="常量的使用"><a href="#常量的使用" class="headerlink" title="常量的使用"></a>常量的使用</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	define(<span class="string">"CONSTANT"</span>, <span class="number">100</span>);	</div><div class="line">	<span class="keyword">if</span>(defined(<span class="string">"CONSTANT"</span>))</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">echo</span> CONSTANT;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> constant(<span class="string">"CONSTANT"</span>);</div><div class="line">	&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>##<code>注意</code></p>
+<ul>
+<li>常量的值不能更改</li>
+<li>常量只支持标准数据类型</li>
+<li>常量不能使用<code>unset()</code>函数清除</li>
+<li><code>define()</code>函数的第三个参数决定这个常量的名称是否支持大小写</li>
+</ul>
+<p>#PHP全局和局部变量</p>
+<p>##全局变量</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$name = <span class="string">"Oozie"</span>;<span class="comment">//name 是一个全局变量</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">echo_name</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">//在函数内部使用全局变量时，必须在**使用前**在函数内部加上 global 标识，否则在函数内部直接使用全局变量会错误。</span></div><div class="line">		<span class="keyword">global</span> $name;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"My name is $name"</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	echo_name();<span class="comment">//My name is Oozie</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$name = <span class="string">"Oozie"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">echo_name</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		$name = <span class="string">"Mahout"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"My name is $name"</span>;<span class="comment">//局部变量优先访问</span></div><div class="line">	&#125;</div><div class="line">	echo_name();<span class="comment">//My name is Mahout</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/基础/" rel="tag">#基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/09/电力基础/" rel="next" title="电力基础">
+                <i class="fa fa-chevron-left"></i> 电力基础
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/10/PHP学习笔记/"
+           data-title="PHP学习笔记" data-url="http://GISering.github.io/2016/10/10/PHP学习笔记/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Oozie" />
+          <p class="site-author-name" itemprop="name">Oozie</p>
+          <p class="site-description motion-element" itemprop="description">多读书，少吹牛</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/GISering" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/GISering" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP引用类型"><span class="nav-number">1.</span> <span class="nav-text">PHP引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP布尔类型"><span class="nav-number">2.</span> <span class="nav-text">PHP布尔类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP字符串类型"><span class="nav-number">3.</span> <span class="nav-text">PHP字符串类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串声明"><span class="nav-number">3.1.</span> <span class="nav-text">字符串声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-quot-quot-和-39-39-声明"><span class="nav-number">3.1.1.</span> <span class="nav-text">使用""和''声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用定界符-lt-lt-lt-任意字符串"><span class="nav-number">3.1.2.</span> <span class="nav-text">使用定界符<<<+任意字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单引号和双引号的区别"><span class="nav-number">3.2.</span> <span class="nav-text">单引号和双引号的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP常量"><span class="nav-number">4.</span> <span class="nav-text">PHP常量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常量的声明、命名"><span class="nav-number">4.1.</span> <span class="nav-text">常量的声明、命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量的使用"><span class="nav-number">4.2.</span> <span class="nav-text">常量的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量"><span class="nav-number">4.3.</span> <span class="nav-text">局部变量</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Oozie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次浏览</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"oozie"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+  
+     <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("8sz47o4CgYJrGlA0bqwNuv0x-gzGzoHsz", "1IDHaszj5dK3kHdrPlavIerr");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+}); 
+</script>
+  
+</body>
+</html>
