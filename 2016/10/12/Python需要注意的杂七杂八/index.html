@@ -1,28 +1,318 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Oozie&#39;s Blog</title>
-  <subtitle>好记性，不如小博客</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!doctype html>
+
+
+
   
-  <link href="http://GISering.github.io/"/>
-  <updated>2016-10-12T14:12:05.000Z</updated>
-  <id>http://GISering.github.io/</id>
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <author>
-    <name>Oozie</name>
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Oozie's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python需要注意的杂七杂八">
+<meta property="og:url" content="http://GISering.github.io/2016/10/12/Python需要注意的杂七杂八/index.html">
+<meta property="og:site_name" content="Oozie's Blog">
+<meta property="og:description" content="从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。">
+<meta property="og:updated_time" content="2016-10-12T14:12:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python需要注意的杂七杂八">
+<meta name="twitter:description" content="从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6339080000263685000',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://GISering.github.io/2016/10/12/Python需要注意的杂七杂八/"/>
+
+
+  <title> Python需要注意的杂七杂八 | Oozie's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
     
-  </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
   
-  <entry>
-    <title>Python需要注意的杂七杂八</title>
-    <link href="http://GISering.github.io/2016/10/12/Python%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
-    <id>http://GISering.github.io/2016/10/12/Python需要注意的杂七杂八/</id>
-    <published>2016-10-12T13:52:25.000Z</published>
-    <updated>2016-10-12T14:12:05.000Z</updated>
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Oozie's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">好记性，不如小博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-    <content type="html"><![CDATA[<p>从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python需要注意的杂七杂八
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-12T21:52:25+08:00" content="2016-10-12">
+              2016-10-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/12/Python需要注意的杂七杂八/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/12/Python需要注意的杂七杂八/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+         <span id="/2016/10/12/Python需要注意的杂七杂八/"class="leancloud_visitors"  data-flag-title="Python需要注意的杂七杂八">
+            &nbsp; | &nbsp; 阅读次数
+            </span>
+      
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。</p>
 <a id="more"></a>
 <h1 id="1-Python语言特性"><a href="#1-Python语言特性" class="headerlink" title="1.Python语言特性"></a>1.Python语言特性</h1><h2 id="1-1-Python的函数参数传递"><a href="#1-1-Python的函数参数传递" class="headerlink" title="1.1 Python的函数参数传递"></a>1.1 Python的函数参数传递</h2><p>看两个例子:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a)</span>:</span></div><div class="line">    a = <span class="number">2</span></div><div class="line"><span class="keyword">print</span> a  <span class="comment"># 1</span></div></pre></td></tr></table></figure>
@@ -207,311 +497,446 @@
 </table>
 <p>403: Forbidden<br>404: Not Found</p>
 <p>HTTPS握手,对称加密,非对称加密,TLS/SSL,RSA</p>
-]]></content>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/10/PHP学习笔记/" rel="next" title="PHP学习笔记">
+                <i class="fa fa-chevron-left"></i> PHP学习笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-    <summary type="html">
+      <div class="ds-thread" data-thread-key="2016/10/12/Python需要注意的杂七杂八/"
+           data-title="Python需要注意的杂七杂八" data-url="http://GISering.github.io/2016/10/12/Python需要注意的杂七杂八/">
+      </div>
     
-      &lt;p&gt;从接触Python以来，一直觉得Python是一门神奇、优雅、高效（开发效率）的语言。网上很多人说Python多么多么简单，如果是和C++相比那确实是简单不知道哪里去了，但随着自己遇到的问题越来越多，愈发觉得Python不是那么简单，所以这里结合网上整理的材料和自己的平时遇到的问题总结了一些Python中常见的“坑”。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://GISering.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://GISering.github.io/tags/Python/"/>
-    
-  </entry>
+  </div>
+
+
+        </div>
+        
+          
   
-  <entry>
-    <title>PHP学习笔记</title>
-    <link href="http://GISering.github.io/2016/10/10/PHP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://GISering.github.io/2016/10/10/PHP学习笔记/</id>
-    <published>2016-10-10T13:05:27.000Z</published>
-    <updated>2016-10-10T13:35:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>很久之前学PHP时写得一些关于基础语法的笔记，很基础。现在自己搭建了博客就把这个上传了。温习了一下笔记惊觉现在再也没有像以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远。借此笔记缅怀一下充满干劲和激情学生时期，也激励一下自己！！！👊👊👊</p>
-<a id="more"></a>
-<h1 id="PHP引用类型"><a href="#PHP引用类型" class="headerlink" title="PHP引用类型"></a>PHP引用类型</h1><p><strong>PHP引用类型</strong>类似于C++语言中的“引用类型”，相当于是一个变量的别名，<strong>语法如下：</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	$b = &amp;$a;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>其中变量<strong><em>b</em></strong>是变量<strong><em>a</em></strong>的引用。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><code>注意:</code></h2><ul>
-<li>只有变量才有引用</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$b = &amp;<span class="number">100</span> <span class="comment">//错误</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li>一个变量值（如<strong><em>b</em></strong>）发生变化，另一个变量的值(<strong><em>a</em></strong>)也会发生变化</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		$b = <span class="number">50</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"a = $a&lt;br&gt;"</span> ;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"b = $b"</span> ;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li>在使用<code>unset()</code>函数时，如果有引用关系，只是解除了这种引用关系，删除了一个别名，而另一个还在</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		<span class="keyword">unset</span>(a)</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">isset</span>($b))</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"这个变量存在"</span>;<span class="comment">//输出</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"这个变量不存在"</span>;</div><div class="line">		&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li>如果两个变量是引用关系，如果赋给其中一个变量的值是新的引用的话，择改变引用关系</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">		$a = <span class="number">100</span>;</div><div class="line">		$b = &amp;$a;</div><div class="line">		$c = <span class="number">50</span>;</div><div class="line">		$b = &amp;$c;</div><div class="line">		$b = <span class="number">25</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"a = $a&lt;br&gt;"</span> ;<span class="comment">// a = 100</span></div><div class="line">		<span class="keyword">echo</span> <span class="string">"b = $b&lt;br&gt;"</span> ;		<span class="comment">// b = 25</span></div><div class="line">		<span class="keyword">echo</span> <span class="string">"c = $c"</span> ;		<span class="comment">// c = 25</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="PHP布尔类型"><a href="#PHP布尔类型" class="headerlink" title="PHP布尔类型"></a>PHP布尔类型</h1><ol>
-<li><code>boolean</code>型的变量值可以为<code>true</code>、<code>false</code></li>
-<li>当其他类型的变量转为布尔型时，以下这些值代表<code>false</code><strong>:</strong><ul>
-<li>整型：<code>0</code></li>
-<li>浮点型：<code>0</code></li>
-<li>字符串：<code>&quot;&quot;</code>、<code>&quot;0&quot;</code></li>
-<li>数组：<code>array()</code></li>
-<li>特殊类型：<code>Null</code></li>
-</ul>
-</li>
-</ol>
-<h1 id="PHP字符串类型"><a href="#PHP字符串类型" class="headerlink" title="PHP字符串类型"></a>PHP字符串类型</h1><h2 id="字符串声明"><a href="#字符串声明" class="headerlink" title="字符串声明"></a>字符串声明</h2><h3 id="使用-quot-quot-和-39-39-声明"><a href="#使用-quot-quot-和-39-39-声明" class="headerlink" title="使用&quot;&quot;和&#39;&#39;声明"></a>使用<code>&quot;&quot;</code>和<code>&#39;&#39;</code>声明</h3><ol>
-<li>在<strong>PHP</strong>中<strong>一个</strong>字符或者<strong>多个</strong>字符都是字符串；</li>
-<li>在<strong>PHP</strong>中声明一个字符串必须用“<em>单引号</em>”或“<em>双引号</em>”引起来；</li>
-<li>在单引号中不能使用<strong>单引号</strong>和<strong>双引号</strong>；</li>
-<li>在双引号中可以使用<strong>单引号</strong>，但不能使用<strong>双引号</strong>；</li>
-<li>如果想在字符串中使用<strong>双引号</strong>对某些短语进行强调，可以使用转移字符<code>&quot;\&quot;</code>。<h3 id="使用定界符-lt-lt-lt-任意字符串"><a href="#使用定界符-lt-lt-lt-任意字符串" class="headerlink" title="使用定界符&lt;&lt;&lt;+任意字符串"></a>使用<strong>定界符</strong><code>&lt;&lt;&lt;+任意字符串</code></h3></li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$var = <span class="number">100</span></div><div class="line">	$str = &lt;&lt;&lt;ss <span class="comment">//ss可以是任意字符串，后面紧跟回车符</span></div><div class="line">	Hello World! This is a <span class="string">"Demo"</span>;\n</div><div class="line">	The value of \$var is $var;</div><div class="line">ss;<span class="comment">//ss必须顶格写</span></div><div class="line">	<span class="keyword">echo</span> $str;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="单引号和双引号的区别"><a href="#单引号和双引号的区别" class="headerlink" title="单引号和双引号的区别"></a>单引号和双引号的区别</h2><ol>
-<li>在双引号中可以解析变量，而在单引号中却不可以 </li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The value of a is $a."</span>;<span class="comment">//The Value of a is 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">"The value of a is&#123;$a&#125;."</span>;<span class="comment">//The Value of a is 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'The value of a is $a.'</span>;<span class="comment">//The value of a is $a.</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>在双引号中可以使用转义字符，而在单引号却不可以(只能转义<strong><em>单引号</em></strong>和<strong><em>转义字符</em></strong>)</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The Value \$a = $a."</span>.;<span class="comment">// The value $a = 100.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'The Value \$a = $a.'</span>;<span class="comment">//The value \$a = $a.</span></div><div class="line">	<span class="keyword">echo</span> <span class="string">'This is a \'string\' demo.'</span>;<span class="comment">//This is a 'string' demo;</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h1><h2 id="常量的声明、命名"><a href="#常量的声明、命名" class="headerlink" title="常量的声明、命名"></a>常量的声明、命名</h2><ol>
-<li><strong>声明</strong>：使用函数<code>define(string name, mixedtype value)</code></li>
-<li><strong>命名</strong>：以<strong>下划线</strong>或<strong>字母</strong>开始的字符串、通常大写</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	define(<span class="string">"CONSTANT"</span>, <span class="number">100</span>); <span class="comment">//CONSTANT是一个值为100的整型常量</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="常量的使用"><a href="#常量的使用" class="headerlink" title="常量的使用"></a>常量的使用</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	define(<span class="string">"CONSTANT"</span>, <span class="number">100</span>);	</div><div class="line">	<span class="keyword">if</span>(defined(<span class="string">"CONSTANT"</span>))</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">echo</span> CONSTANT;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> constant(<span class="string">"CONSTANT"</span>);</div><div class="line">	&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>##<code>注意</code></p>
-<ul>
-<li>常量的值不能更改</li>
-<li>常量只支持标准数据类型</li>
-<li>常量不能使用<code>unset()</code>函数清除</li>
-<li><code>define()</code>函数的第三个参数决定这个常量的名称是否支持大小写</li>
-</ul>
-<p>#PHP全局和局部变量</p>
-<p>##全局变量</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$name = <span class="string">"Oozie"</span>;<span class="comment">//name 是一个全局变量</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">echo_name</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">//在函数内部使用全局变量时，必须在**使用前**在函数内部加上 global 标识，否则在函数内部直接使用全局变量会错误。</span></div><div class="line">		<span class="keyword">global</span> $name;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"My name is $name"</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	echo_name();<span class="comment">//My name is Oozie</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$name = <span class="string">"Oozie"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">echo_name</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		$name = <span class="string">"Mahout"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"My name is $name"</span>;<span class="comment">//局部变量优先访问</span></div><div class="line">	&#125;</div><div class="line">	echo_name();<span class="comment">//My name is Mahout</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;很久之前学PHP时写得一些关于基础语法的笔记，很基础。现在自己搭建了博客就把这个上传了。温习了一下笔记惊觉现在再也没有像以前那么踏实的学一样东西了，不是眼高手低、就是好高骛远。借此笔记缅怀一下充满干劲和激情学生时期，也激励一下自己！！！👊👊👊&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://GISering.github.io/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://GISering.github.io/tags/PHP/"/>
-    
-      <category term="基础" scheme="http://GISering.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Oozie" />
+          <p class="site-author-name" itemprop="name">Oozie</p>
+          <p class="site-description motion-element" itemprop="description">多读书，少吹牛</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/GISering" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/GISering" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Python语言特性"><span class="nav-number">1.</span> <span class="nav-text">1.Python语言特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Python的函数参数传递"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Python的函数参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Python中的元类-metaclass"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Python中的元类(metaclass)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-staticmethod和-classmethod"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 @staticmethod和@classmethod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-类变量和实例变量"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 类变量和实例变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Python自省"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 Python自省</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-字典推导式"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 字典推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Python中单下划线和双下划线"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 Python中单下划线和双下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-字符串格式化-和-format"><span class="nav-number">1.8.</span> <span class="nav-text">1.8 字符串格式化:%和.format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-迭代器和生成器"><span class="nav-number">1.9.</span> <span class="nav-text">1.9 迭代器和生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-10-args-and-kwargs"><span class="nav-number">1.10.</span> <span class="nav-text">1.10 *args and **kwargs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-11-Python中重载"><span class="nav-number">1.11.</span> <span class="nav-text">1.11 Python中重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-12-闭包"><span class="nav-number">1.12.</span> <span class="nav-text">1.12 闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-13-lambda函数"><span class="nav-number">1.13.</span> <span class="nav-text">1.13 lambda函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-14-Python函数式编程"><span class="nav-number">1.14.</span> <span class="nav-text">1.14 Python函数式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-15-Python里的拷贝"><span class="nav-number">1.15.</span> <span class="nav-text">1.15 Python里的拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-16-Python垃圾回收机制"><span class="nav-number">1.16.</span> <span class="nav-text">1.16 Python垃圾回收机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引用计数"><span class="nav-number">1.16.1.</span> <span class="nav-text">1 引用计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-标记-清除机制"><span class="nav-number">1.16.2.</span> <span class="nav-text">2 标记-清除机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-分代技术"><span class="nav-number">1.16.3.</span> <span class="nav-text">3 分代技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-17-Python的List"><span class="nav-number">1.17.</span> <span class="nav-text">1.17 Python的List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-18-Python的is"><span class="nav-number">1.18.</span> <span class="nav-text">1.18 Python的is</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-19-read-readline和readlines"><span class="nav-number">1.19.</span> <span class="nav-text">1.19 read,readline和readlines</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-网络"><span class="nav-number">2.</span> <span class="nav-text">2.网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-ARP协议"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 ARP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-urllib和urllib2的区别"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 urllib和urllib2的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-网站用户密码保存"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 网站用户密码保存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-HTTP和HTTPS"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 HTTP和HTTPS</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
   
-  <entry>
-    <title>电力基础</title>
-    <link href="http://GISering.github.io/2016/10/09/%E7%94%B5%E5%8A%9B%E5%9F%BA%E7%A1%80/"/>
-    <id>http://GISering.github.io/2016/10/09/电力基础/</id>
-    <published>2016-10-09T14:39:17.000Z</published>
-    <updated>2016-10-09T14:41:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊</p>
-<a id="more"></a>
-<h1 id="1-输电"><a href="#1-输电" class="headerlink" title="1.输电"></a>1.输电</h1><h2 id="1-1-基础知识"><a href="#1-1-基础知识" class="headerlink" title="1.1.基础知识"></a>1.1.基础知识</h2><ol>
-<li>电力系统：由发、变、输、配、用电等设备和相应的辅助系统，按照规定的技术经济要求组成的一个统一的系统</li>
-<li>输电线路<ol>
-<li>主要作用：实现在负荷中心和电源中心的电能传输。</li>
-<li>分类:<ul>
-<li>按结构形式：架空线路、电缆线路、混合线路</li>
-<li>按电流性质：交流电、直流电</li>
-<li>按电压等级：特高压、超高压、高压</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>为什么采用<strong>高压输电</strong>：在输送功率不变的情况下，提高电压可以减少电流，从而可以降低电压降落和电能损耗，同时可以选择较细的导线，以节约电网投资。</li>
-<li>架空线路<ul>
-<li>基本组成：导线、避雷线、杆塔、绝缘子、金具</li>
-<li>基本概念：<ul>
-<li>杆塔高度、</li>
-<li>杆塔呼称高、</li>
-<li>档距、</li>
-<li>代表档距、</li>
-<li>耐张端</li>
-<li>导线换相</li>
-</ul>
-</li>
-<li>维护：巡视、大修、小修、导线弛度测量、绝缘子盐密度测量、接地电阻测量、零值瓷瓶测量、交叉跨越测量、接头测温、隐蔽工程开挖。</li>
-</ul>
-</li>
-<li>电缆线路<ol>
-<li>组成：导体、绝缘层、保护包皮</li>
-<li>分类：单芯、三芯、四芯</li>
-<li>维护：红外测温、测负荷及接地电流、电缆外套试验、避雷器带电测试、变频试验、线路参数试验等</li>
-</ol>
-</li>
-</ol>
-<h1 id="2-变电"><a href="#2-变电" class="headerlink" title="2.变电"></a>2.变电</h1><h1 id="3-配电"><a href="#3-配电" class="headerlink" title="3.配电"></a>3.配电</h1><h2 id="3-1基础知识"><a href="#3-1基础知识" class="headerlink" title="3.1基础知识"></a>3.1基础知识</h2><ol>
-<li><p>电压等级分类：</p>
-<ul>
-<li>特高压：1000kV及以上。百万伏级交流和正负800千伏直流。 </li>
-<li>超高压：330、500、750 kV。</li>
-<li>中压：3～35 kV。</li>
-<li>低压：0.4kV及以下。</li>
-</ul>
-</li>
-<li><p>配电网的定义：电力网中重要起分配电能作用的网络就称为配电网</p>
-<ul>
-<li>按电压等级来分</li>
-<li>按供电区功能来分</li>
-</ul>
-</li>
-<li><p>配电网的特点</p>
-<ul>
-<li>配网网络结构比较复杂</li>
-<li>配网设备数量巨大</li>
-<li>配网设备异动较为频繁</li>
-<li>配电管理包含电力线路的管理和变电设备的管理</li>
-<li>配网调度业务繁忙，</li>
-</ul>
-</li>
-<li>配电系统种类<ul>
-<li>一次变压的配电系统<ul>
-<li>只有一个变电所的一次变压系统</li>
-<li>拥有高压配电所的一次变压供配电系统</li>
-<li>高压深入负荷中心的一次变压供配电系统</li>
-</ul>
-</li>
-<li>两次变压的配电系统</li>
-<li>低压供配电系统</li>
-</ul>
-</li>
-<li>配电网供电基本要求：安全、可靠、优质、经济</li>
-</ol>
-<h2 id="3-2-常用电器设备"><a href="#3-2-常用电器设备" class="headerlink" title="3.2.常用电器设备"></a>3.2.常用电器设备</h2><ol>
-<li><strong>馈线：</strong>馈线是配电网中的一个术语，它可以指与任意配网节点相连接的支路，可以是馈入支路；</li>
-<li><strong>电力变压器：</strong>：变电所的核心设备，通过它将一种电压的交流电能转换成另一种电压的交流电能；</li>
-<li><strong>高压开断设备：</strong></li>
-<li><strong>高压断路器：</strong>带有强力灭弧装置的高压开关设备，用于供配电系统发生故障时与保护装置配合自动切断系统的短路电流；</li>
-<li><strong>隔离刀闸：</strong>隔离开关的主要功能是隔离电源，当它处于分闸状态时，有着明显的断口，使处于其后的高压母线、断路器等电力设备与电源或带电高压母线隔离，以保障检修工作的安全</li>
-<li><strong>高压负荷开关：</strong>高压负荷开关是一种介乎隔离开关与断路器之间的结构简单的高压电器，具有简单的灭弧装置，常用来分合负荷电流和较小的过负荷电流，但不能分断短路电流。</li>
-<li><strong>高压熔断器：</strong>配电网络中人为设置的最薄弱的元件。当其所在电路发生短路或长期过载时，它便因过热而熔断，并通过灭弧介质将熔断时产生的电弧熄灭，最终开断电路，以保护电力电路及其他的电气设备。</li>
-<li><strong>低压开关设备：</strong></li>
-<li><strong>互感器：</strong></li>
-<li><strong>成套电器：</strong><ol>
-<li>环网柜供电单元</li>
-<li>预装式变电站</li>
-<li>高压开关柜</li>
-<li>低压开关柜</li>
-</ol>
-</li>
-</ol>
-<h2 id="3-3-配电网络结构"><a href="#3-3-配电网络结构" class="headerlink" title="3.3.配电网络结构"></a>3.3.配电网络结构</h2><h3 id="3-3-1-网络结构分类"><a href="#3-3-1-网络结构分类" class="headerlink" title="3.3.1.网络结构分类"></a>3.3.1.网络结构分类</h3><ol>
-<li>放射式<ul>
-<li>单回路放射式</li>
-<li>双回路放射式</li>
-<li>带公共备用线的放射式网络结构</li>
-</ul>
-</li>
-<li>树干式<ul>
-<li>单回路树干式</li>
-<li>双回路树干式</li>
-</ul>
-</li>
-<li>环式</li>
-</ol>
-<h3 id="3-3-2-网络结构适用对象"><a href="#3-3-2-网络结构适用对象" class="headerlink" title="3.3.2.网络结构适用对象"></a>3.3.2.网络结构适用对象</h3><ol>
-<li>中压系统<ul>
-<li>对于城市非重要用户及郊区，可靠性要求不高，可采用树干式结构。<ul>
-<li>对负荷密度大，且供电要求高的用户可采用双电源双回路树干式或环式结构。</li>
-<li>对于提供双电源有困难，用户的供电可靠性要求又较高的情况，可采用放射式结构。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>低压系统：环式结构使用较少<ul>
-<li>对于单台设备容量较大或较重要场合，一般采用放射式结构。<ul>
-<li>对于非重要用电设备，用电性质相近，又便于线路敷设时，一般采用树干式结构。</li>
-<li>对于重要用电设备，可采用双电源双回路树干式结构或双电源双回路放射式结构。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="3-4-配电网络架构与敷设"><a href="#3-4-配电网络架构与敷设" class="headerlink" title="3.4.配电网络架构与敷设"></a>3.4.配电网络架构与敷设</h2><h2 id="3-5-配电业务管理"><a href="#3-5-配电业务管理" class="headerlink" title="3.5.配电业务管理"></a>3.5.配电业务管理</h2><ol>
-<li><p>两票三制：是电业安全生产保证体系的几项最基本的工作制度，是电力企业保人身、保电网、保设备的重要手段和措施。任何人为的责任事故，均可在其“两票三制”的执行上找到原因。</p>
-<ul>
-<li>两票：工作票、操作票</li>
-<li>三制：交接班制度、设备定期实验及轮换制度、巡回检查制度</li>
-</ul>
-</li>
-<li>配电巡视管理<ul>
-<li>定期巡视</li>
-<li>特殊性巡视</li>
-<li>夜间巡视</li>
-<li>故障性巡视</li>
-<li>监察性巡视</li>
-</ul>
-</li>
-<li>配电缺陷管理<ul>
-<li>危急缺陷：随时可能导致发生事故或危及人身安全的缺陷，必须尽快消除或采取必要的安全技术措施进行临时处理。–<strong>24小时内解决</strong></li>
-<li>重大缺陷：指缺陷比较严重，但设备仍可短期继续安全运行。该缺陷应在短期内消除，消除前应加强监视。–<strong>三个月内解决</strong></li>
-<li>一般缺陷：指对近期安全运行影响不大的缺陷。可列入年、季检修计划或日常维护工作中去消除。</li>
-</ul>
-</li>
-</ol>
-<h1 id="4-数据采集"><a href="#4-数据采集" class="headerlink" title="4.数据采集"></a>4.数据采集</h1><ol>
-<li>常规数据采集</li>
-<li>滚动运维采集</li>
-<li><p>营配贯通：包括运检、营销相关设备的采集和在电网GIS平台、PMS2.0支撑工具，营销业务系统等系统给的录入</p>
-<ul>
-<li>运检财路设备：低压线路、低压电缆、低压站房、低压站内设备。</li>
-<li>营销采录设备：高压用户类、营销资源类。(收钱的)</li>
-</ul>
-</li>
-<li><p>地下电缆采集</p>
-<ul>
-<li>主网数据采集：发电数据、输电数据，35KV及以上</li>
-<li>配网数据采集：10KV及以上</li>
-</ul>
-</li>
-</ol>
-<h1 id="5-研发"><a href="#5-研发" class="headerlink" title="5.研发"></a>5.研发</h1><blockquote>
-<p>主要应对电网数据采集与系统实施运维的业务需求</p>
-</blockquote>
-<h2 id="5-1-研发工具的业务内容"><a href="#5-1-研发工具的业务内容" class="headerlink" title="5.1.研发工具的业务内容"></a>5.1.研发工具的业务内容</h2><ol>
-<li><p>地下电缆——数据采集</p>
-<ol>
-<li>地下电缆采集移动终端：GPS、物联网、RFID</li>
-<li>地下电缆精益化管理工具</li>
-</ol>
-</li>
-<li><p>营配贯通——PMS2.0运维</p>
-<ol>
-<li>营配贯通全方位辅助工具：变电站、公线、专线、共变、专变、配变到户</li>
-<li>乡镇供电所图数治理工具</li>
-</ol>
-</li>
-<li>GIS平台运维——系统建设<ol>
-<li>基于国网GIS平台的车载GPS监控系统</li>
-<li>GIS实用化管控工具</li>
-</ol>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="工作" scheme="http://GISering.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
-  </entry>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Oozie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   
-</feed>
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次浏览</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"oozie"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+  
+     <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("8sz47o4CgYJrGlA0bqwNuv0x-gzGzoHsz", "1IDHaszj5dK3kHdrPlavIerr");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+}); 
+</script>
+  
+</body>
+</html>
