@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://GISering.github.io/"/>
-  <updated>2016-10-24T14:51:03.000Z</updated>
+  <updated>2016-10-24T14:52:53.000Z</updated>
   <id>http://GISering.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Openlayer3基本地图功能实现2</title>
+    <title>Openlayer3基本地图功能实现(2)</title>
     <link href="http://GISering.github.io/2016/10/24/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B02/"/>
     <id>http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/</id>
     <published>2016-10-24T14:45:08.000Z</published>
-    <updated>2016-10-24T14:51:03.000Z</updated>
+    <updated>2016-10-24T14:52:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法</p>
 <h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的<code>onclick</code>事件中调用</p>
@@ -162,11 +162,11 @@
   </entry>
   
   <entry>
-    <title>Openlayers3基本地图功能实现（1）</title>
+    <title>Openlayers3基本地图功能实现(1)</title>
     <link href="http://GISering.github.io/2016/10/22/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B01/"/>
     <id>http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现1/</id>
     <published>2016-10-22T13:57:52.000Z</published>
-    <updated>2016-10-24T14:46:28.000Z</updated>
+    <updated>2016-10-24T14:53:04.000Z</updated>
     
     <content type="html"><![CDATA[<p>说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，所以对地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。</p>
 <a id="more"></a>
