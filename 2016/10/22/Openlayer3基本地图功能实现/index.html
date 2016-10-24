@@ -61,7 +61,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Openlayer,WebGIS," />
+  <meta name="keywords" content="Openlayers,WebGIS," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
+<meta name="description" content="说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Openlayer3基本地图功能实现">
+<meta property="og:title" content="Openlayers3基本地图功能实现">
 <meta property="og:url" content="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
-<meta property="og:description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
-<meta property="og:updated_time" content="2016-10-22T09:30:19.000Z">
+<meta property="og:description" content="说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知">
+<meta property="og:updated_time" content="2016-10-24T08:51:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Openlayer3基本地图功能实现">
-<meta name="twitter:description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
+<meta name="twitter:title" content="Openlayers3基本地图功能实现">
+<meta name="twitter:description" content="说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知">
 
 
 
@@ -112,7 +112,7 @@
   <link rel="canonical" href="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/"/>
 
 
-  <title> Openlayer3基本地图功能实现 | Oozie's Blog </title>
+  <title> Openlayers3基本地图功能实现 | Oozie's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +242,7 @@
             
             
               
-                Openlayer3基本地图功能实现
+                Openlayers3基本地图功能实现
               
             
           </h1>
@@ -307,7 +307,7 @@
 
           
           
-         <span id="/2016/10/22/Openlayer3基本地图功能实现/"class="leancloud_visitors"  data-flag-title="Openlayer3基本地图功能实现">
+         <span id="/2016/10/22/Openlayer3基本地图功能实现/"class="leancloud_visitors"  data-flag-title="Openlayers3基本地图功能实现">
             &nbsp; | &nbsp; 阅读次数
             </span>
       
@@ -324,9 +324,37 @@
       
 
       
-        <p>之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系统！所以这里就有了离线地图开发这一说了，不然直接使用百度、高德这些成熟公司的地图API不要太容易~。</p>
+        <p>说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。</p>
 <a id="more"></a>
-<h1 id="关于Openlayer"><a href="#关于Openlayer" class="headerlink" title="关于Openlayer"></a>关于Openlayer</h1><p>说来惭愧，作为一个学GIS出身的同学，之前</p>
+<h1 id="关于Openlayers"><a href="#关于Openlayers" class="headerlink" title="关于Openlayers"></a>关于Openlayers</h1><p>Openlayers是一个WebGIS前端开源JavaScript库，主要用于在桌面浏览器和手机浏览器中建立交互式的地图。Openlayers支持的地图来源包括Google Maps、Yahoo Map、微软的Bing Map、以及OpenStreet Map等等，除此之外，Openlayers实现访问地理空间数据的方法都符合行业标准，支持Open GIS协会制定的WMS和WFS等网络服务规范，可以通过远程服务的方式，例如你可以将ArcServer发布的切片地图利用Openlayers显示在Web浏览器上。</p>
+<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p><div id="map" width="400px" height="300px" background-color="grey"></div></p>
+<script>
+    var map = new ol.Map(
+    {
+        target: document.getElementById('map'),
+        loadTilesWhileAnimating: true,
+        view: new ol.View(
+        {
+            center: center,
+            zoom: 10,
+            minZoom: 2,
+            maxZoom: 19
+        }),
+        layers:
+            new ol.layer.Tile(
+            {
+                source: new ol.source.BingMaps(
+                {
+                    imagerySet: 'AerialWithLabels',
+                    key: 'AkGbxXx6tDWf1swIhPJyoAVp06H0s0gDTYslNWWHZ6RoPqMpB9ld5FY1WutX8UoF'
+                })
+            })
+
+
+    });
+</script>
+
+
 
       
     </div>
@@ -349,7 +377,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Openlayer/" rel="tag">#Openlayer</a>
+            <a href="/tags/Openlayers/" rel="tag">#Openlayers</a>
           
             <a href="/tags/WebGIS/" rel="tag">#WebGIS</a>
           
@@ -397,7 +425,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/10/22/Openlayer3基本地图功能实现/"
-           data-title="Openlayer3基本地图功能实现" data-url="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/">
+           data-title="Openlayers3基本地图功能实现" data-url="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/">
       </div>
     
   </div>
@@ -515,7 +543,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Openlayer"><span class="nav-number">1.</span> <span class="nav-text">关于Openlayer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Openlayers"><span class="nav-number">1.</span> <span class="nav-text">关于Openlayers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#地图功能"><span class="nav-number">2.</span> <span class="nav-text">地图功能</span></a></li></ol></div>
             
           </div>
         </section>
