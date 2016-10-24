@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://GISering.github.io/"/>
-  <updated>2016-10-24T07:10:00.000Z</updated>
+  <updated>2016-10-24T14:46:30.000Z</updated>
   <id>http://GISering.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Openlayer3基本地图功能实现2</title>
+    <link href="http://GISering.github.io/2016/10/24/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B02/"/>
+    <id>http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/</id>
+    <published>2016-10-24T14:45:08.000Z</published>
+    <updated>2016-10-24T14:46:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的<code>onclick</code>事件中调用</p>
+<h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif" alt=""></p>
+<h2 id="轨迹回放"><a href="#轨迹回放" class="headerlink" title="轨迹回放"></a>轨迹回放</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif" alt=""></p>
+<h2 id="添加位置标记"><a href="#添加位置标记" class="headerlink" title="添加位置标记"></a>添加位置标记</h2><h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;地图功能&quot;&gt;&lt;a href=&quot;#地图功能&quot; class=&quot;headerlink&quot; title=&quot;地图功能&quot;&gt;&lt;/a&gt;地图功能&lt;/h1&gt;&lt;p&gt;为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的&lt;code&gt;onclick&lt;/code&gt;事件中调用&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://GISering.github.io/categories/javascript/"/>
+    
+      <category term="前端" scheme="http://GISering.github.io/categories/javascript/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jQuery" scheme="http://GISering.github.io/tags/jQuery/"/>
+    
+      <category term="Html" scheme="http://GISering.github.io/tags/Html/"/>
+    
+  </entry>
   
   <entry>
     <title>JS/DOM和jQuery之于HTML元素</title>
@@ -129,49 +159,32 @@
   </entry>
   
   <entry>
-    <title>Openlayers3基本地图功能实现</title>
-    <link href="http://GISering.github.io/2016/10/22/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/</id>
-    <published>2016-10-22T08:57:52.000Z</published>
-    <updated>2016-10-24T08:57:10.000Z</updated>
+    <title>Openlayers3基本地图功能实现（1）</title>
+    <link href="http://GISering.github.io/2016/10/22/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B01/"/>
+    <id>http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现1/</id>
+    <published>2016-10-22T13:57:52.000Z</published>
+    <updated>2016-10-24T14:46:28.000Z</updated>
     
-    <content type="html"><![CDATA[<p>说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。</p>
+    <content type="html"><![CDATA[<p>说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，所以对地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。</p>
 <a id="more"></a>
-<h1 id="关于Openlayers"><a href="#关于Openlayers" class="headerlink" title="关于Openlayers"></a>关于Openlayers</h1><p>Openlayers是一个WebGIS前端开源JavaScript库，主要用于在桌面浏览器和手机浏览器中建立交互式的地图。Openlayers支持的地图来源包括Google Maps、Yahoo Map、微软的Bing Map、以及OpenStreet Map等等，除此之外，Openlayers实现访问地理空间数据的方法都符合行业标准，支持Open GIS协会制定的WMS和WFS等网络服务规范，可以通过远程服务的方式，例如你可以将ArcServer发布的切片地图利用Openlayers显示在Web浏览器上。</p>
-<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p><div id="map" width="400px" height="300px" background-color="grey"></div></p>
-<script>
-    var center = [-5639523.95, -3501274.52]
-    var map = new ol.Map(
-    {
-        target: document.getElementById('map'),
-        loadTilesWhileAnimating: true,
-        view: new ol.View(
-        {
-            center: center,
-            zoom: 10,
-            minZoom: 2,
-            maxZoom: 19
-        }),
-        layers:
-            new ol.layer.Tile(
-            {
-                source: new ol.source.BingMaps(
-                {
-                    imagerySet: 'AerialWithLabels',
-                    key: 'AkGbxXx6tDWf1swIhPJyoAVp06H0s0gDTYslNWWHZ6RoPqMpB9ld5FY1WutX8UoF'
-                })
-            })
-
-
-    });
-</script>
-
-
+<h1 id="关于Openlayers"><a href="#关于Openlayers" class="headerlink" title="关于Openlayers"></a>关于Openlayers</h1><p>Openlayers是一个WebGIS前端开源JavaScript库，主要用于在桌面浏览器和手机浏览器中建立交互式的地图。Openlayers支持的地图来源包括Google Maps、Yahoo Map、Microsoft的Bing Map、以及OpenStreet Map等等，除此之外，Openlayers实现访问地理空间数据的方法都符合行业标准，支持Open GIS协会制定的WMS和WFS等网络服务规范，可以通过远程服务的方式，例如你可以将ArcServer发布的切片地图利用Openlayers显示在Web浏览器上。  </p>
+<p>下面简单说明一下Openlayers中比较重要的几个对象：</p>
+<h2 id="ol-Map"><a href="#ol-Map" class="headerlink" title="ol.Map"></a>ol.Map</h2><p>ol.Map对象就像一个容器，里面可以放置如layers、control、overlay、interaction等用于控制地图及地图交互的对象，从ol.Map的类方法就可以看出，它可以控制这些对象的添加和删除。</p>
+<h2 id="ol-View"><a href="#ol-View" class="headerlink" title="ol.View"></a>ol.View</h2><p>从ol.View的类方法可以看出，它提供了一些如设置地图中心点、缩放级别、分辨率的方法。ol.View对象主要是控制地图与人的交互，如进行缩放，调节分辨率、地图的旋转等控制。也就是说每个map对象必须包含一个view对象部分，用于控制与用户的交互。</p>
+<h2 id="ol-layer-Layer"><a href="#ol-layer-Layer" class="headerlink" title="ol.layer.Layer"></a>ol.layer.Layer</h2><p>地图是由一个或多个图层组成的，使用不同的图层存储不同类型的地物，比如由存储道路的图层，有展示拥堵情况的图层，通常还有一个含有基础地理信息（比如政区划分）的底图图层。在OpenLayers中，图层是使用Layer对象表示的，主要有热度图层(heatmapLayer)、图片图层(imageLayer)、切片图层(tileLayer) 和矢量图层(vectorLayer)四种类型，它们都是继承Layer类的。</p>
+<h2 id="ol-layer-Vector"><a href="#ol-layer-Vector" class="headerlink" title="ol.layer.Vector"></a>ol.layer.Vector</h2><p>矢量地图，是由很多要素组成的，每个要素都有自己的地理坐标，基于数学规则，无论矢量地图怎么放大，地图都不会失真。它是 OpenLayers 中非常重要的一种图层类型，利用矢量地图可以实现非常多的功能，如动态标绘、调用 WFS 服务、编辑要素、可点击的要素、动态加载要素等等。</p>
+<p>矢量图层是在客户端渲染的，在Web环境中，对应的就是浏览器。构成一个矢量图层的包含一个数据（source）和一个样式（style），数据构成矢量图层的要素，样式规定要素显示的方式和外观。一个初始化成功的矢量图层包含一个到多个要素（feature），每个要素由地理属性（geometry）和多个其他的属性，可能包含名称等。结构如下图：<br><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93pw47q7cj30j708x3z7.jpg" alt="-c"></p>
+<h2 id="ol-Control"><a href="#ol-Control" class="headerlink" title="ol.Control"></a>ol.Control</h2><p>每一个地图应用都应该有一些工具方便用户控制地图的行为，比如缩放，全屏，坐标、比例尺、地图旋转控件等，ol.Control是这些控件类的基类。通过<code>ol.Map</code>对象<code>addControl()</code>方法可将这些控件添加到地图中去。</p>
+<h2 id="ol-Overlay"><a href="#ol-Overlay" class="headerlink" title="ol.Overlay"></a>ol.Overlay</h2><p>Overlay从名字上看，是覆盖图、覆盖物的意思，主要的用途就是在地图之上再覆盖一层，用以显示额外的可见元素，可见元素一般是 HTML 元素，利用 overlay，可以将可见元素放置到地图的任意位置，形成地图上再浮动一层的效果。例如在地图上相应的坐标放置一个标志、标签，利用overlay都可以做到，具体来说，点击地图上某位置，在点击位置弹出弹出框就是利用了overlay</p>
+<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的<code>onclick</code>事件中调用</p>
+<h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif" alt=""></p>
+<h2 id="轨迹回放"><a href="#轨迹回放" class="headerlink" title="轨迹回放"></a>轨迹回放</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif" alt=""></p>
+<h2 id="添加位置标记"><a href="#添加位置标记" class="headerlink" title="添加位置标记"></a>添加位置标记</h2><h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif" alt=""></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。&lt;/p&gt;
+      &lt;p&gt;说来惭愧，作为一个学GIS出身的同学，本科期间净弄些桌面的开发和空间分析方面的东西，读硕士的时候也是东搞搞、西瞅瞅，一会搞图像处理，一会对Hadoop有了兴趣搞了一段时间机器学习算法，结果落入了那种感觉什么都会，什么又都不会的田地！好尴尬呀~😂。WebGIS的东西自然也是浅尝辄止，也就用过ArcServer发布过几次地图，借助ArcObjects写过几个地图服务，所以对地图在前端显示的功能原理一概一知半解。Openlayers也是这次和我一起开发之前说的那个离线地图控件的同事发现的，在这之前真心没有听过。&lt;/p&gt;
     
     </summary>
     
