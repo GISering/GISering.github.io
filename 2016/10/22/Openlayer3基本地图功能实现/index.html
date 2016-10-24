@@ -61,7 +61,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Openlayer,WebGIS," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="多读书，少吹牛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://GISering.github.io/categories/index.html">
+<meta name="description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Openlayer3基本地图功能实现">
+<meta property="og:url" content="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
-<meta property="og:description" content="多读书，少吹牛">
-<meta property="og:updated_time" content="2016-10-09T14:45:04.000Z">
+<meta property="og:description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
+<meta property="og:updated_time" content="2016-10-22T09:30:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="多读书，少吹牛">
+<meta name="twitter:title" content="Openlayer3基本地图功能实现">
+<meta name="twitter:description" content="之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系">
 
 
 
@@ -109,16 +109,10 @@
 
 
 
-  <link rel="canonical" href="http://GISering.github.io/categories/"/>
+  <link rel="canonical" href="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/"/>
 
 
-  <title>
-  
-
-  
-    分类 | Oozie's Blog
-  
-</title>
+  <title> Openlayer3基本地图功能实现 | Oozie's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +133,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -229,16 +223,169 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 7 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Openlayer3基本地图功能实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T16:57:52+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/GIS/" itemprop="url" rel="index">
+                    <span itemprop="name">GIS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/GIS/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/22/Openlayer3基本地图功能实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/22/Openlayer3基本地图功能实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+         <span id="/2016/10/22/Openlayer3基本地图功能实现/"class="leancloud_visitors"  data-flag-title="Openlayer3基本地图功能实现">
+            &nbsp; | &nbsp; 阅读次数
+            </span>
+      
+
+          
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/Web/">Web</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/前端/">前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情随笔/">心情随笔</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系统！所以这里就有了离线地图开发这一说了，不然直接使用百度、高德这些成熟公司的地图API不要太容易~。</p>
+<a id="more"></a>
+<h1 id="关于Openlayer"><a href="#关于Openlayer" class="headerlink" title="关于Openlayer"></a>关于Openlayer</h1><p>说来惭愧，作为一个学GIS出身的同学，之前</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Openlayer/" rel="tag">#Openlayer</a>
+          
+            <a href="/tags/WebGIS/" rel="tag">#WebGIS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/12/毕业&工作三个月了/" rel="next" title="毕业&工作三个月了">
+                <i class="fa fa-chevron-left"></i> 毕业&工作三个月了
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/24/JS-DOM和jQuery之于HTML元素/" rel="prev" title="JS/DOM和jQuery之于HTML元素">
+                JS/DOM和jQuery之于HTML元素 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -247,6 +394,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/22/Openlayer3基本地图功能实现/"
+           data-title="Openlayer3基本地图功能实现" data-url="http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -266,8 +421,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -344,6 +508,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Openlayer"><span class="nav-number">1.</span> <span class="nav-text">关于Openlayer</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -466,6 +641,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

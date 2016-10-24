@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://GISering.github.io/"/>
-  <updated>2016-10-13T13:14:54.000Z</updated>
+  <updated>2016-10-24T06:53:20.000Z</updated>
   <id>http://GISering.github.io/</id>
   
   <author>
@@ -14,6 +14,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS/DOM和jQuery之于HTML元素</title>
+    <link href="http://GISering.github.io/2016/10/24/JS-DOM%E5%92%8CjQuery%E4%B9%8B%E4%BA%8EHTML%E5%85%83%E7%B4%A0/"/>
+    <id>http://GISering.github.io/2016/10/24/JS-DOM和jQuery之于HTML元素/</id>
+    <published>2016-10-24T06:50:18.000Z</published>
+    <updated>2016-10-24T06:53:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。</p>
+<a id="more"></a>
+<h2 id="创建element的方法"><a href="#创建element的方法" class="headerlink" title="创建element的方法"></a>创建element的方法</h2><ol>
+<li>使用原生js<ul>
+<li><code>document.createElement(nodeName)</code><br>  这里nodename可以是‘div’，‘button’，‘h1’等</li>
+</ul>
+</li>
+<li>使用jQuery<ul>
+<li><code>$(tag)</code><br>  这里tag可以是‘\<div\>\’，’\<button>‘ 等闭合标签</button></div\></li>
+</ul>
+</li>
+</ol>
+<h2 id="获取element的方法"><a href="#获取element的方法" class="headerlink" title="获取element的方法"></a>获取element的方法</h2><ol>
+<li>使用原生js<ul>
+<li><code>document.getElementById(id)</code></li>
+<li><code>document.getElementByName(name)</code></li>
+<li><code>document.getElementByTagName(tag)</code></li>
+</ul>
+</li>
+<li>使用jQuery<ul>
+<li><code>$(&#39;#id&#39;)</code>根据元素id值获取，这里’#id‘例如’#btn‘ ，’#frm‘等</li>
+<li><code>$(&#39;tag&#39;)</code>根据元素标签名获取，这里’tag‘例如’p‘，’h1‘</li>
+<li><code>$(&#39;.classname&#39;)</code>根据元素类名获取</li>
+</ul>
+</li>
+</ol>
+<h2 id="获取和设置element属性的方法"><a href="#获取和设置element属性的方法" class="headerlink" title="获取和设置element属性的方法"></a>获取和设置element属性的方法</h2><ol>
+<li>使用原生js<ol>
+<li>获取<ul>
+<li><code>element.id</code> 获取元素id值</li>
+<li><code>element.className</code> 获取元素的class属性</li>
+<li><code>element.getAttribute(attriName)</code> 根据属性名获取属性值</li>
+<li><code>element.style</code> 获取元素的样式</li>
+</ul>
+</li>
+<li>设置<ul>
+<li><code>element.id</code> 设置元素id值</li>
+<li><code>element.className</code> 设置元素的class属性</li>
+<li><code>element.setAttribute(attriName)</code> 根据属性名设置属性值</li>
+<li><code>element.style</code> 设置元素的样式，如<code>element.style.margin = &#39;5px&#39;</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>使用jQuery</p>
+<ol>
+<li>获取<ul>
+<li><code>attr(&#39;id&#39;)</code>获取元素id值</li>
+<li><code>val()</code> 获取通过value属性设置的值 </li>
+<li><code>css(name)</code>获取元素某一<strong><em>style</em></strong>属性，例如<code>$(&quot;p&quot;).css(&quot;color&quot;)</code></li>
+</ul>
+</li>
+<li><p>设置</p>
+<ul>
+<li><code>attr(&#39;id&#39;, idName)</code>设置元素id值为idName</li>
+<li><code>val(value)</code> 设置value属性值</li>
+<li><p><code>addClass(className)</code>设置元素的class</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&quot;#div1&quot;).addClass(&quot;important&quot;)//添加一个class</div><div class="line">$(&quot;#div1&quot;).addClass(&quot;important blue&quot;)//添加多个class</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>attr(attriName, value)</code> 设置元素的属性值</p>
+</li>
+<li><p><code>css(name, value)</code>设置元素的css属性，例如  </p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>) <span class="comment">//设置单个style属性</span></div><div class="line">$(<span class="string">"p"</span>).css(&#123;</div><div class="line">	<span class="string">"color"</span>: <span class="string">"red"</span>,</div><div class="line">	<span class="string">"padding"</span>: <span class="string">"5px"</span>,</div><div class="line">	<span class="string">"font-size"</span>: <span class="string">"20px"</span></div><div class="line">&#125;);<span class="comment">//设置多个style属性</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="jQuery和DOM对象之间的转换"><a href="#jQuery和DOM对象之间的转换" class="headerlink" title="jQuery和DOM对象之间的转换"></a>jQuery和DOM对象之间的转换</h2><p>为方便识别，在表示jQuery对象的变量前加上\$，如<code>var $variable = jQuery</code>， 普通DOM变量名保持普通命名方法</p>
+<ol>
+<li><p>jQuery对象转为DOM对象</p>
+<ul>
+<li><p>使用索引[index]</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var $v = $(&quot;#v&quot;); //jQuery对象</div><div class="line">var v = $v[0];//DOM对象</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用方法<code>get(index)</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var $v = $(&quot;v&quot;); //jQuery对象</div><div class="line">var v = $v.get(0);//DOM对象</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>DOM对象转为jQuery对象</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var v = document.getElementById(&quot;v&quot;);//DOM对象</div><div class="line">var $v = $(v);//jQuery对象</div></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://GISering.github.io/categories/javascript/"/>
+    
+      <category term="前端" scheme="http://GISering.github.io/categories/javascript/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jQuery" scheme="http://GISering.github.io/tags/jQuery/"/>
+    
+      <category term="Html" scheme="http://GISering.github.io/tags/Html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Openlayer3基本地图功能实现</title>
+    <link href="http://GISering.github.io/2016/10/22/Openlayer3%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9B%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://GISering.github.io/2016/10/22/Openlayer3基本地图功能实现/</id>
+    <published>2016-10-22T08:57:52.000Z</published>
+    <updated>2016-10-22T09:30:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系统！所以这里就有了离线地图开发这一说了，不然直接使用百度、高德这些成熟公司的地图API不要太容易~。</p>
+<a id="more"></a>
+<h1 id="关于Openlayer"><a href="#关于Openlayer" class="headerlink" title="关于Openlayer"></a>关于Openlayer</h1><p>说来惭愧，作为一个学GIS出身的同学，之前</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在博客中说过，最近在弄一个国网SG-UAP平台下的离线地图控件的开发，为什么要用离线的呢，这里的离线是指服务器不能连接外部Internet，国网内部所以平台系统都不允许连接外网，可能是之前被攻击过吧，所以索性整个局域网自己玩，再也不愁安全性问题了。这就苦了开发人员和用户了，开发人员不能使用丰富的Web资源帮助自己开发（比如CDN, 百度地图等在线地图API等等），用户也只能在内网机上使用这些系统！所以这里就有了离线地图开发这一说了，不然直接使用百度、高德这些成熟公司的地图API不要太容易~。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="GIS" scheme="http://GISering.github.io/categories/GIS/"/>
+    
+      <category term="Web" scheme="http://GISering.github.io/categories/GIS/Web/"/>
+    
+    
+      <category term="Openlayer" scheme="http://GISering.github.io/tags/Openlayer/"/>
+    
+      <category term="WebGIS" scheme="http://GISering.github.io/tags/WebGIS/"/>
+    
+  </entry>
   
   <entry>
     <title>毕业&amp;工作三个月了</title>
