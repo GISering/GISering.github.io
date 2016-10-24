@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
+<meta name="description" content="前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Openlayer3基本地图功能实现2">
-<meta property="og:url" content="http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/index.html">
+<meta property="og:title" content="JS/DOM和jQuery之于HTML元素">
+<meta property="og:url" content="http://GISering.github.io/2016/10/23/JS-DOM和jQuery之于HTML元素/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
-<meta property="og:description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif">
-<meta property="og:updated_time" content="2016-10-24T14:51:03.000Z">
+<meta property="og:description" content="前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006y8lVagw1f93de0i6dhj30e809dq3e.jpg">
+<meta property="og:updated_time" content="2016-10-24T14:48:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Openlayer3基本地图功能实现2">
-<meta name="twitter:description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif">
+<meta name="twitter:title" content="JS/DOM和jQuery之于HTML元素">
+<meta name="twitter:description" content="前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006y8lVagw1f93de0i6dhj30e809dq3e.jpg">
 
 
 
@@ -116,10 +111,10 @@
 
 
 
-  <link rel="canonical" href="http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/"/>
+  <link rel="canonical" href="http://GISering.github.io/2016/10/23/JS-DOM和jQuery之于HTML元素/"/>
 
 
-  <title> Openlayer3基本地图功能实现2 | Oozie's Blog </title>
+  <title> JS/DOM和jQuery之于HTML元素 | Oozie's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +244,7 @@
             
             
               
-                Openlayer3基本地图功能实现2
+                JS/DOM和jQuery之于HTML元素
               
             
           </h1>
@@ -261,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T22:45:08+08:00" content="2016-10-24">
-              2016-10-24
+            <time itemprop="dateCreated" datetime="2016-10-23T14:50:18+08:00" content="2016-10-23">
+              2016-10-23
             </time>
           </span>
 
@@ -303,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/24/Openlayer3基本地图功能实现2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/24/Openlayer3基本地图功能实现2/" itemprop="commentsCount"></span>
+                <a href="/2016/10/23/JS-DOM和jQuery之于HTML元素/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/JS-DOM和jQuery之于HTML元素/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,7 +309,7 @@
 
           
           
-         <span id="/2016/10/24/Openlayer3基本地图功能实现2/"class="leancloud_visitors"  data-flag-title="Openlayer3基本地图功能实现2">
+         <span id="/2016/10/23/JS-DOM和jQuery之于HTML元素/"class="leancloud_visitors"  data-flag-title="JS/DOM和jQuery之于HTML元素">
             &nbsp; | &nbsp; 阅读次数
             </span>
       
@@ -331,12 +326,92 @@
       
 
       
-        <p>在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法</p>
-<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的<code>onclick</code>事件中调用</p>
+        <p>前端的东西就是麻烦，乱七八糟的东西什么都得会。初学js和jQuery，作前端开发时，经常对html元素的创建、获取、设置等方法模糊不清，这里索性把js和jQuery一些常用的方法对比记下来方便记忆学习。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006y8lVagw1f93de0i6dhj30e809dq3e.jpg" alt="-c"></p>
 <a id="more"></a>
-<h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif" alt=""></p>
-<h2 id="轨迹回放"><a href="#轨迹回放" class="headerlink" title="轨迹回放"></a>轨迹回放</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif" alt=""></p>
-<h2 id="添加位置标记"><a href="#添加位置标记" class="headerlink" title="添加位置标记"></a>添加位置标记</h2><h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif" alt=""></p>
+<h2 id="创建element的方法"><a href="#创建element的方法" class="headerlink" title="创建element的方法"></a>创建element的方法</h2><ol>
+<li>使用原生js<ul>
+<li><code>document.createElement(nodeName)</code><br>  这里nodename可以是‘div’，‘button’，‘h1’等</li>
+</ul>
+</li>
+<li>使用jQuery<ul>
+<li><code>$(tag)</code><br>  这里tag可以是<code>&lt;div&gt;&lt;/div&gt;</code>，<code>&lt;button/&gt;</code> 等闭合标签</li>
+</ul>
+</li>
+</ol>
+<h2 id="获取element的方法"><a href="#获取element的方法" class="headerlink" title="获取element的方法"></a>获取element的方法</h2><ol>
+<li>使用原生js<ul>
+<li><code>document.getElementById(id)</code></li>
+<li><code>document.getElementByName(name)</code></li>
+<li><code>document.getElementByTagName(tag)</code></li>
+</ul>
+</li>
+<li>使用jQuery<ul>
+<li><code>$(&#39;#id&#39;)</code>根据元素id值获取，这里’#id‘例如’#btn‘ ，’#frm‘等</li>
+<li><code>$(&#39;tag&#39;)</code>根据元素标签名获取，这里’tag‘例如’p‘，’h1‘</li>
+<li><code>$(&#39;.classname&#39;)</code>根据元素类名获取</li>
+</ul>
+</li>
+</ol>
+<h2 id="获取和设置element属性的方法"><a href="#获取和设置element属性的方法" class="headerlink" title="获取和设置element属性的方法"></a>获取和设置element属性的方法</h2><ol>
+<li>使用原生js<ol>
+<li>获取<ul>
+<li><code>element.id</code> 获取元素id值</li>
+<li><code>element.className</code> 获取元素的class属性</li>
+<li><code>element.getAttribute(attriName)</code> 根据属性名获取属性值</li>
+<li><code>element.style</code> 获取元素的样式</li>
+</ul>
+</li>
+<li>设置<ul>
+<li><code>element.id</code> 设置元素id值</li>
+<li><code>element.className</code> 设置元素的class属性</li>
+<li><code>element.setAttribute(attriName)</code> 根据属性名设置属性值</li>
+<li><code>element.style</code> 设置元素的样式，如<code>element.style.margin = &#39;5px&#39;</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>使用jQuery</p>
+<ol>
+<li>获取<ul>
+<li><code>attr(&#39;id&#39;)</code>获取元素id值</li>
+<li><code>val()</code> 获取通过value属性设置的值 </li>
+<li><code>css(name)</code>获取元素某一<strong><em>style</em></strong>属性，例如<code>$(&quot;p&quot;).css(&quot;color&quot;)</code></li>
+</ul>
+</li>
+<li><p>设置</p>
+<ul>
+<li><code>attr(&#39;id&#39;, idName)</code>设置元素id值为idName</li>
+<li><code>val(value)</code> 设置value属性值</li>
+<li><p><code>addClass(className)</code>设置元素的class</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&quot;#div1&quot;).addClass(&quot;important&quot;)//添加一个class</div><div class="line">$(&quot;#div1&quot;).addClass(&quot;important blue&quot;)//添加多个class</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>attr(attriName, value)</code> 设置元素的属性值</p>
+</li>
+<li><p><code>css(name, value)</code>设置元素的css属性，例如  </p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>) <span class="comment">//设置单个style属性</span></div><div class="line">$(<span class="string">"p"</span>).css(&#123;</div><div class="line">	<span class="string">"color"</span>: <span class="string">"red"</span>,</div><div class="line">	<span class="string">"padding"</span>: <span class="string">"5px"</span>,</div><div class="line">	<span class="string">"font-size"</span>: <span class="string">"20px"</span></div><div class="line">&#125;);<span class="comment">//设置多个style属性</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="jQuery和DOM对象之间的转换"><a href="#jQuery和DOM对象之间的转换" class="headerlink" title="jQuery和DOM对象之间的转换"></a>jQuery和DOM对象之间的转换</h2><p>为方便识别，在表示jQuery对象的变量前加上\$，如<code>var $variable = jQuery</code>， 普通DOM变量名保持普通命名方法</p>
+<ol>
+<li><p>jQuery对象转为DOM对象</p>
+<ul>
+<li><p>使用索引[index]</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var $v = $(&quot;#v&quot;); //jQuery对象</div><div class="line">var v = $v[0];//DOM对象</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用方法<code>get(index)</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var $v = $(&quot;v&quot;); //jQuery对象</div><div class="line">var v = $v.get(0);//DOM对象</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>DOM对象转为jQuery对象</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var v = document.getElementById(&quot;v&quot;);//DOM对象</div><div class="line">var $v = $(v);//jQuery对象</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -370,13 +445,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/23/JS-DOM和jQuery之于HTML元素/" rel="next" title="JS/DOM和jQuery之于HTML元素">
-                <i class="fa fa-chevron-left"></i> JS/DOM和jQuery之于HTML元素
+              <a href="/2016/10/22/Openlayer3基本地图功能实现1/" rel="next" title="Openlayers3基本地图功能实现（1）">
+                <i class="fa fa-chevron-left"></i> Openlayers3基本地图功能实现（1）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/24/Openlayer3基本地图功能实现2/" rel="prev" title="Openlayer3基本地图功能实现2">
+                Openlayer3基本地图功能实现2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -402,8 +481,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/24/Openlayer3基本地图功能实现2/"
-           data-title="Openlayer3基本地图功能实现2" data-url="http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/">
+      <div class="ds-thread" data-thread-key="2016/10/23/JS-DOM和jQuery之于HTML元素/"
+           data-title="JS/DOM和jQuery之于HTML元素" data-url="http://GISering.github.io/2016/10/23/JS-DOM和jQuery之于HTML元素/">
       </div>
     
   </div>
@@ -521,7 +600,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#地图功能"><span class="nav-number">1.</span> <span class="nav-text">地图功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测量"><span class="nav-number">1.1.</span> <span class="nav-text">测量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轨迹回放"><span class="nav-number">1.2.</span> <span class="nav-text">轨迹回放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加位置标记"><span class="nav-number">1.3.</span> <span class="nav-text">添加位置标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制图形"><span class="nav-number">1.4.</span> <span class="nav-text">绘制图形</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建element的方法"><span class="nav-number">1.</span> <span class="nav-text">创建element的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取element的方法"><span class="nav-number">2.</span> <span class="nav-text">获取element的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取和设置element属性的方法"><span class="nav-number">3.</span> <span class="nav-text">获取和设置element属性的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery和DOM对象之间的转换"><span class="nav-number">4.</span> <span class="nav-text">jQuery和DOM对象之间的转换</span></a></li></ol></div>
             
           </div>
         </section>
