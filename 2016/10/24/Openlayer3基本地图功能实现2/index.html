@@ -80,21 +80,21 @@
 
 
 <meta name="description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
+地图功能我们将这些地图常用功能简单封装了一下（不知羞耻的将该类称之为Mapx），方便在按钮的onclick事件中调用，主要有测量、轨迹回放、绘图、添加位置标记功能。功能的实现参考了Openlayers官网的Example，并在此基础修改完善，使其更加符合实际">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Openlayer3基本地图功能实现(2)">
 <meta property="og:url" content="http://GISering.github.io/2016/10/24/Openlayer3基本地图功能实现2/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
 <meta property="og:description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
+地图功能我们将这些地图常用功能简单封装了一下（不知羞耻的将该类称之为Mapx），方便在按钮的onclick事件中调用，主要有测量、轨迹回放、绘图、添加位置标记功能。功能的实现参考了Openlayers官网的Example，并在此基础修改完善，使其更加符合实际">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif">
-<meta property="og:updated_time" content="2016-10-24T14:52:53.000Z">
+<meta property="og:updated_time" content="2016-10-25T13:59:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Openlayer3基本地图功能实现(2)">
 <meta name="twitter:description" content="在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法
-地图功能为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的onclick事件中调用">
+地图功能我们将这些地图常用功能简单封装了一下（不知羞耻的将该类称之为Mapx），方便在按钮的onclick事件中调用，主要有测量、轨迹回放、绘图、添加位置标记功能。功能的实现参考了Openlayers官网的Example，并在此基础修改完善，使其更加符合实际">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif">
 
 
@@ -332,8 +332,30 @@
 
       
         <p>在1中介绍了一下Openlayers中常用的类的功能，下面从功能实现的角度，用代码说明如何将这些类组合在一起封装成可以直接使用的地图操作方法</p>
-<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>为了使调用方便，我们将这些地图常用功能简单封装了一下，方便在按钮的<code>onclick</code>事件中调用</p>
+<h1 id="地图功能"><a href="#地图功能" class="headerlink" title="地图功能"></a>地图功能</h1><p>我们将这些地图常用功能简单封装了一下（不知羞耻的将该类称之为<code>Mapx</code>），方便在按钮的<code>onclick</code>事件中调用，主要有测量、轨迹回放、绘图、添加位置标记功能。功能的实现参考了Openlayers官网的<a href="http://openlayers.org/en/latest/examples/index.html" target="_blank" rel="external">Example</a>，并在此基础修改完善，使其更加符合实际使用场景。比如，测量功能，官方示例中无法退出测量功能，并且测量时所标绘的图形也无法移除。</p>
 <a id="more"></a>
+<p>首先给出<code>MapX</code>类的整体结构：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>routeString</td>
+<td>Array</td>
+<td>经纬度坐标点数组。如[[117, 24], [116, 25]]</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>int</td>
+<td>轨迹回放速度，值越大速度越快，值在1~100范围内</td>
+</tr>
+</tbody>
+</table>
 <h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guaw67hg30yj0hqe81.gif" alt=""></p>
 <h2 id="轨迹回放"><a href="#轨迹回放" class="headerlink" title="轨迹回放"></a>轨迹回放</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93guw12dkg30yj0hqjyu.gif" alt=""></p>
 <h2 id="添加位置标记"><a href="#添加位置标记" class="headerlink" title="添加位置标记"></a>添加位置标记</h2><h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f93gwvbbjgg30yj0hqh1u.gif" alt=""></p>
