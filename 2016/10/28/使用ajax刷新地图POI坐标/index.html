@@ -61,7 +61,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jQuery,WebGIS," />
+  <meta name="keywords" content="WebGIS,jQuery," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备刷新到该最新的位置。">
+<meta name="description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用ajax刷新地图POI坐标">
 <meta property="og:url" content="http://GISering.github.io/2016/10/28/使用ajax刷新地图POI坐标/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
-<meta property="og:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备刷新到该最新的位置。">
-<meta property="og:updated_time" content="2016-10-28T03:31:12.000Z">
+<meta property="og:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
+<meta property="og:updated_time" content="2016-10-29T05:18:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ajax刷新地图POI坐标">
-<meta name="twitter:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备刷新到该最新的位置。">
+<meta name="twitter:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
 
 
 
@@ -312,8 +312,9 @@
       
 
       
-        <p>最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是<strong>实时</strong>的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备刷新到该最新的位置。</p>
+        <p>最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是<strong>实时</strong>的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。</p>
 <a id="more"></a>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>初学前端开发两个月，弯弯绕绕的东西实在太多，不会的就更多了。对于Ajax技术之前只听说过这个单词，它是干什么用的、用在哪的我是一概不知</p>
 
       
     </div>
@@ -336,9 +337,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
-          
             <a href="/tags/WebGIS/" rel="tag">#WebGIS</a>
+          
+            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
           
         </div>
       
@@ -498,7 +499,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li></ol></div>
             
           </div>
         </section>
