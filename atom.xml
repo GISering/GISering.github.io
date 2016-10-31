@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://GISering.github.io/"/>
-  <updated>2016-10-29T05:18:07.000Z</updated>
+  <updated>2016-10-31T08:35:23.000Z</updated>
   <id>http://GISering.github.io/</id>
   
   <author>
@@ -20,11 +20,73 @@
     <link href="http://GISering.github.io/2016/10/28/%E4%BD%BF%E7%94%A8ajax%E5%88%B7%E6%96%B0%E5%9C%B0%E5%9B%BEPOI%E5%9D%90%E6%A0%87/"/>
     <id>http://GISering.github.io/2016/10/28/使用ajax刷新地图POI坐标/</id>
     <published>2016-10-28T03:11:31.000Z</published>
-    <updated>2016-10-29T05:18:07.000Z</updated>
+    <updated>2016-10-31T08:35:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是<strong>实时</strong>的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。</p>
 <a id="more"></a>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>初学前端开发两个月，弯弯绕绕的东西实在太多，不会的就更多了。对于Ajax技术之前只听说过这个单词，它是干什么用的、用在哪的我是一概不知</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>初学前端开发两个月，弯弯绕绕的东西实在太多，不会的就更多了。读书的时候从老司机那知道要达到这种网页局部刷新的目的得使用Ajax，然而我对于Ajax技术的了解真的只停留在了解的阶段，它具体是干什么用的、用在哪、怎么用我是一概不知，有种“不明觉厉”的感觉。不过没关系，咱们自学能力强，接受新东西快（装*完毕，跑~🙈）。于是查询了一下资料在，在<a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="_blank" rel="external">MDN</a> 中是这么解释的：</p>
+<blockquote>
+<p>AJAX stands for Asynchronous JavaScript and XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with server-side scripts. It can send as well as receive information in a variety of formats, including JSON, XML, HTML, and even text files. AJAX’s most appealing characteristic, however, is its “asynchronous” nature, which means it can do all of this without having to refresh the page. This lets you update portions of a page based upon user events.</p>
+</blockquote>
+<p>总的来说Ajax有两个特点：</p>
+<ul>
+<li>向服务器提交请求时不用重新加载页面</li>
+<li>获取和处理来自服务器返回的数据  </li>
+</ul>
+<p>果然，这两个特点不就是我想要的么？网页地图不断向服务器发送请求而不用刷新页面，获取移动设备的最新的位置信息，并将该位置更新在网页地图上显示。</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>Ajax是利用<code>XMLHttpRequest</code>对象在客户端和服务端传递信息的，它在<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="external">MDN</a>中是这样定义的：</p>
+<blockquote>
+<p>XMLHttpRequest is an API that provides client functionality for transferring data between a client and a server. It provides an easy way to retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just a part of the page without disrupting what the user is doing.  XMLHttpRequest is used heavily in AJAX programming.</p>
+</blockquote>
+<p>这让我不禁想到一个和它长得很像的<code>HttpRequest</code>,它们两有什么区别呢？</p>
+<ol>
+<li><code>XMLHttpRequest</code>是一个标准的<strong>JavaScript</strong>对象，用于在浏览器中通过js向服务器发送<strong><em>Request</em></strong>请求；</li>
+<li><code>HttpRequest</code>是一个服务器端的对象，代表一个向服务器的<strong><em>Request</em></strong>请求；</li>
+<li>总的来说，它们一个工作在<strong>浏览器</strong>中，一个工作在<strong>Web服务器</strong>中，扮演着不同的角色；</li>
+</ol>
+<p>知道了<code>XMLHttpRequest</code>对象，该如何使用呢？下面是一段完整的使用代码段：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	  <span class="keyword">var</span> httpRequest;</div><div class="line">	  <span class="built_in">document</span>.getElementById(<span class="string">"ajaxButton"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; makeRequest(<span class="string">'test.html'</span>); &#125;;</div><div class="line">	</div><div class="line">	  <span class="function"><span class="keyword">function</span> <span class="title">makeRequest</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">	    httpRequest = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	</div><div class="line">	    <span class="keyword">if</span> (!httpRequest) &#123;</div><div class="line">	      alert(<span class="string">'Giving up :( Cannot create an XMLHTTP instance'</span>);</div><div class="line">	      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	    &#125;</div><div class="line">	    httpRequest.onreadystatechange = alertContents;</div><div class="line">	    httpRequest.open(<span class="string">'GET'</span>, url);</div><div class="line">	    httpRequest.send();</div><div class="line">	  &#125;</div><div class="line">	</div><div class="line">	  <span class="function"><span class="keyword">function</span> <span class="title">alertContents</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	    <span class="keyword">if</span> (httpRequest.readyState === XMLHttpRequest.DONE) &#123;</div><div class="line">	      <span class="keyword">if</span> (httpRequest.status === <span class="number">200</span>) &#123;</div><div class="line">	        alert(httpRequest.responseText);</div><div class="line">	      &#125; <span class="keyword">else</span> &#123;</div><div class="line">	        alert(<span class="string">'There was a problem with the request.'</span>);</div><div class="line">	      &#125;</div><div class="line">	    &#125;</div><div class="line">	  &#125;</div><div class="line">	&#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>首先构建<code>XMLHttpRequest</code>对象  </p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> httpRequest = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure>
+</li>
+<li><p>声明服务器返回数据后的处理函数  </p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">httpRequest.onreadystatechange = alertContents;<span class="comment">//函数名</span></div></pre></td></tr></table></figure>
+<p> 或者</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">httpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>在回调函数里，首先要判断***Request***的状态：
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">	<span class="keyword">if</span> (httpRequest.readyState === XMLHttpRequest.DONE) &#123;</div><div class="line"><span class="comment">// everything is good, the response is received</span></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">	    <span class="comment">// still not ready</span></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+
+
+如果***Request***的状态是完成，再判断***Response code***：
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (httpRequest.status === <span class="number">200</span>) &#123;</div><div class="line">   <span class="comment">// perfect!</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">   <span class="comment">// there was a problem with the request,</span></div><div class="line">   <span class="comment">// for example the response may contain a 404 (NotFound)</span></div><div class="line">   <span class="comment">// or 500 (Internal Server Error) response code</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+如果返回码是**200**，就可以获得服务器返回的数据，并进行处理，获取返回数据的方法：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">httpRequest.responseText;//以字符串的方式获取服务器的Response</div><div class="line">httpRequest.responseXML;//以XMLDocument对象的方式获取服务器的Response</div></pre></td></tr></table></figure>
+
+
+如果是同步请求，脚本会停止运行，等待`send()`函数的返回，所以就不需要提前定义回调函数，可以直接在`send()`方法返回后，获取服务器的返回数据，进行进一步操作。
+</code></pre><ol>
+<li><p>提交<strong><em>Request</em></strong>请求</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">httpRequest.open(&apos;GET&apos;, url, true);</div><div class="line">	httpRequest.send();</div></pre></td></tr></table></figure>
+<ul>
+<li><code>open()</code>函数用于初始化请求<ul>
+<li>第一个参数是<strong><em>HTTP</em></strong>的<strong><em>Request</em></strong>方法——<em>GET, POST, HEAD</em>；</li>
+<li>第二个参数是处理<strong><em>HTTP</em></strong>请求的<strong>url</strong>地址；</li>
+<li>第三个是可选参数，用于设定是否以异步的方式发送请求，默认是<code>true</code>,即以异步方式。</li>
+</ul>
+</li>
+<li><code>send()</code>函数用于发送请求，如果是异步请求，那么该方法在请求发送时就会返回；如果是同步请求，那么该方法直到<strong><em>Response</em></strong>返回时才会返回。<code>send()</code>函数有一个可选参数，用于设置Reauest body，如果请求方法是<em>GET</em>或<em>HEAD</em>，该参数将被忽略并且Reauest body将被置为空。</li>
+</ul>
+</li>
+</ol>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>通过上面的介绍，可以发现如果直接用<code>XMLHttpRequest</code>实现Ajax，是比较麻烦的，好在有大神提供了强大的<strong>jQuery</strong>，它将<code>XMLHttpRequest</code>进一步封装，使用起来更加便捷：</p>
 ]]></content>
     
     <summary type="html">
