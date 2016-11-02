@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://GISering.github.io/2016/10/28/使用ajax刷新地图POI坐标/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
 <meta property="og:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
-<meta property="og:updated_time" content="2016-10-31T08:47:40.000Z">
+<meta property="og:updated_time" content="2016-11-02T09:16:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ajax刷新地图POI坐标">
 <meta name="twitter:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
@@ -362,7 +362,7 @@
 
 如果返回码是**200**，就可以获得服务器返回的数据，并进行处理，获取返回数据的方法：   
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.responseText;//以字符串的方式获取服务器的Response</div><div class="line">	httpRequest.responseXML;//以XMLDocument对象的方式获取服务器的Response</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.responseText;<span class="comment">//以字符串的方式获取服务器的Response</span></div><div class="line">	httpRequest.responseXML;<span class="comment">//以XMLDocument对象的方式获取服务器的Response</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
 
 如果是同步请求，脚本会停止运行，等待`send()`函数的返回，所以就不需要提前定义回调函数，可以直接在`send()`方法返回后，获取服务器的返回数据，进行进一步操作。
@@ -380,7 +380,24 @@
 </ul>
 </li>
 </ol>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>通过上面的介绍，可以发现如果直接用<code>XMLHttpRequest</code>实现Ajax，是比较麻烦的，好在有大神提供了强大的<strong>jQuery</strong>，它将<code>XMLHttpRequest</code>进一步封装，使用起来更加便捷：</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>通过上面的介绍，可以发现如果直接用<code>XMLHttpRequest</code>实现Ajax，是比较麻烦的，好在有强大的<strong>jQuery</strong>，它将<code>XMLHttpRequest</code>进一步封装，使用起来更加便捷：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	<span class="attr">type</span>: <span class="comment">//请求的方法‘get’或‘post’</span></div><div class="line">	url:	<span class="comment">//请求的url地址</span></div><div class="line">	data: <span class="comment">//请求时带的数据</span></div><div class="line">	<span class="keyword">async</span>:	<span class="comment">//是否异步请求，默认为true</span></div><div class="line">	success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="comment">//请求成功后的回调函数，data为返回数据</span></div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>详细说明可以参考<a href="http://api.jquery.com/jQuery.ajax/" target="_blank" rel="external">jQuery官方文档</a>。<br>为了达到实时刷新位置信息的目的，我是这样解决的：  </p>
+<ol>
+<li>首先给实时从移动端上传的每条位置信息记录添加一个时间戳；</li>
+<li>后端通过设备ID和时间戳从数据库中查询出最新的记录，得到位置信息；</li>
+<li>编写对应的Control层，给前端访问；</li>
+<li>前端设置定时器，并在定时器类调用$.ajax()方法，定时调用以获取最新的位置信息。</li>
+</ol>
+<p>我的开发环境是<strong>J2EE SSM</strong>:</p>
+<ul>
+<li>后端SQL语句如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select coord_x, coord_y from table </div><div class="line">where deviceId = #&#123;deviceId&#125; and 2&gt;rownum</div><div class="line">order by createtime desc</div></pre></td></tr></table></figure>
+<ul>
+<li>前端js代码如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function refreshPos()&#123;     var BASE_PATH = &apos;&lt;%=basePath%&gt;&apos;;     var deviceId = &apos;&lt;%=deviceId%&gt;&apos;;     var url = BASE_PATH + &quot;control/mdpos/getMobileDeviceCurrentPos.action?deviceId=&quot; + deviceId + &quot;&amp;etc=&quot; + new Date().getTime();//请求地址     $.ajax(&#123;       type: &quot;get&quot;,       url: url,       async: true,       success: function(data)&#123;   	  	  var x = parseFloat(data.sPos.coord_X);   	  	  var y = parseFloat(data.sPos.coord_Y);		  var currentPos = ol.proj.transform([x, y], &apos;EPSG:4326&apos;, &apos;EPSG:3857&apos;);   			point_overlay.setPosition(currentPos);//Openlayers的api	    &#125;	 &#125;);   &#125; </div><div class="line"></div><div class="line">setInterval(&quot;refreshPos()&quot;, 5000);//设置定时器</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
