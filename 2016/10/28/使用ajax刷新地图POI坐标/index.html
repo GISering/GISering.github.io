@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://GISering.github.io/2016/10/28/使用ajax刷新地图POI坐标/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
 <meta property="og:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
-<meta property="og:updated_time" content="2016-11-02T09:16:36.000Z">
+<meta property="og:updated_time" content="2016-11-02T09:27:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ajax刷新地图POI坐标">
 <meta name="twitter:description" content="最近做的项目，我负责的模块涉及到移动设备的位置和轨迹的监控，需要将设备的实时位置信息展现在地图上，注意是实时的。完整业务流程是，移动设备每隔一段时间（10s左右）将自己位置信息（经纬度）坐标上传至数据库中，Web浏览器网页不断获取最新的坐标，并将设备在Web地图上的位置刷新到该坐标，达到设备位置监控的目的。">
@@ -342,27 +342,20 @@
 </li>
 <li><p>声明服务器返回数据后的处理函数  </p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.onreadystatechange = alertContents;<span class="comment">//函数名</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p> ===<br> 或者   </p>
 </li>
 </ol>
-<pre><code>或者   
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-
-
+===
 在回调函数里，首先要判断***Request***的状态：   
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">if</span> (httpRequest.readyState === XMLHttpRequest.DONE) &#123;</div><div class="line"><span class="comment">// everything is good, the response is received</span></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">	    <span class="comment">// still not ready</span></div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
-
+===
 如果***Request***的状态是完成，再判断***Response code***：  
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">if</span> (httpRequest.status === <span class="number">200</span>) &#123;</div><div class="line">    <span class="comment">// perfect!</span></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// there was a problem with the request,</span></div><div class="line">    <span class="comment">// for example the response may contain a 404 (NotFound)</span></div><div class="line">    <span class="comment">// or 500 (Internal Server Error) response code</span></div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-
-
-如果返回码是**200**，就可以获得服务器返回的数据，并进行处理，获取返回数据的方法：   
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.responseText;<span class="comment">//以字符串的方式获取服务器的Response</span></div><div class="line">	httpRequest.responseXML;<span class="comment">//以XMLDocument对象的方式获取服务器的Response</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	if (httpRequest.status === 200) &#123;</div><div class="line">    // perfect!</div><div class="line">	&#125; else &#123;</div><div class="line">    // there was a problem with the request,</div><div class="line">    // for example the response may contain a 404 (NotFound)</div><div class="line">    // or 500 (Internal Server Error) response code</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">```     </div><div class="line">===             </div><div class="line">如果返回码是**200**，就可以获得服务器返回的数据，并进行处理，获取返回数据的方法：   </div><div class="line"></div><div class="line">```JavaScript</div><div class="line">&lt;script&gt;</div><div class="line">	httpRequest.responseText;//以字符串的方式获取服务器的Response</div><div class="line">	httpRequest.responseXML;//以XMLDocument对象的方式获取服务器的Response</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 
 
 如果是同步请求，脚本会停止运行，等待`send()`函数的返回，所以就不需要提前定义回调函数，可以直接在`send()`方法返回后，获取服务器的返回数据，进行进一步操作。
