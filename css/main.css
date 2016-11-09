@@ -187,7 +187,7 @@ body {
   position: relative;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16.5px;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #555;
   background: #fff;
 }
@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #30ffff;
+  background: #8ce998;
 }
 .links-of-blogroll {
   font-size: 13px;
