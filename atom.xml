@@ -115,9 +115,9 @@
       <category term="Front" scheme="http://GISering.github.io/categories/Front/"/>
     
     
-      <category term="WebGIS" scheme="http://GISering.github.io/tags/WebGIS/"/>
-    
       <category term="jQuery" scheme="http://GISering.github.io/tags/jQuery/"/>
+    
+      <category term="WebGIS" scheme="http://GISering.github.io/tags/WebGIS/"/>
     
   </entry>
   
