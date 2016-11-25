@@ -86,7 +86,8 @@
 <meta property="og:site_name" content="Oozie's Blog">
 <meta property="og:description" content="今天来自己的主页里看了一下，上次更新博客还是10月28号，时间太快，一不留神一个月就没了🤕。趁着今天在单位早早的把手头工作给结了，就回顾一下这近一个月以来的搬砖生活，毕竟这月28号又要奔赴大山东的”GW技校”回个炉，不知到时候会是怎样的体验~~~">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/006y8mN6gw1fa45digz32j30ma0h90uk.jpg">
-<meta property="og:updated_time" content="2016-11-25T02:38:56.000Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006y8mN6gw1fa46rb68r1g30co0jib29.gif">
+<meta property="og:updated_time" content="2016-11-25T03:22:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的十一月">
 <meta name="twitter:description" content="今天来自己的主页里看了一下，上次更新博客还是10月28号，时间太快，一不留神一个月就没了🤕。趁着今天在单位早早的把手头工作给结了，就回顾一下这近一个月以来的搬砖生活，毕竟这月28号又要奔赴大山东的”GW技校”回个炉，不知到时候会是怎样的体验~~~">
@@ -320,8 +321,17 @@
 <p>接下来，领导又安排做了一个表箱巡检系统移动端Android开发的任务。上学的时候，做过两个Android的小项目，一个是“车辆轨迹管理”，一个是“基于HDFS的云存储”算是入了这个Android的大门，不过那时候你大爷还是你大爷，Google大爷还依然支持Android dev tools for Eclipse，现在只能拥抱Android Studio了。为了配置开发环境还把我的Netfits账号充了值，方便翻墙，心累！不过官方提供的Simulator是真**慢，珍惜生命，于是我下载了很火的<a href="https://www.genymotion.com" target="_blank" rel="external">Genymotion</a>模拟器，号称快如真机，亲测确实不错。这里有几个关于Genymotion的坑说明一下：</p>
 <ul>
 <li>不翻墙的话Genymotion下载速度忒慢，单位50M光纤，下载它速度只有几kb</li>
-<li>在AS里装了Genymotion插件，并且启动了模拟器，但是<code>^ + r</code>运行，会提示找不到设备，这是因为没有设置ADB tools的路径，这里应该使用AS sdk文件下的adb toos，而不是默认Genymotion自带的。<br><img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa45digz32j30ma0h90uk.jpg" alt="Genymotion设置"> </li>
+<li>在AS里装了Genymotion插件，并且启动了模拟器，但是<code>^ + r</code>运行，会提示找不到设备，这是因为没有设置ADB tools的路径，这里应该使用AS sdk文件下的ADB tools，而不是默认Genymotion自带的。<br><img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa45digz32j30ma0h90uk.jpg" alt="Genymotion设置"> </li>
 </ul>
+<p>目前已经把界面UI完成了，在此过程中，收货颇丰：<br>    1.对Android Studio的使用更加的熟练，不过还有很多快捷键仍然记不住；</p>
+<pre><code>2. 知道按钮各种效果的制作方法；
+3. 弄明白了Android5.0 Material Design向低版本兼容的方法，即AppCompat.v7的使用；
+4. 对比Html的盒模型，对Android的layout布局方法更加清晰，基本可以熟练的做出自己想要的布局样式😌。    
+</code></pre><p>当然不清晰的地方还有很多：</p>
+<pre><code>1. 对Soap协议没有很好的理解，现在可以使用kSoap2包调用WebService;
+2. 对不同分辨率设备的适配方法不是很理解；
+3. 对.9图的使用方法仍旧存有疑惑；   
+</code></pre><p>这是界面效果：<br>    <img src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa46rb68r1g30co0jib29.gif" alt="-c"></p>
 
       
     </div>
