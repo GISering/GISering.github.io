@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: #555;
   background: #fff;
@@ -1026,7 +1026,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: 10px auto 15px;
   text-align: center;
-  font-size: 14.5px;
+  font-size: 15.5px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e94a53;
+  background: #504213;
 }
 .links-of-blogroll {
   font-size: 13px;
