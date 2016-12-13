@@ -61,7 +61,7 @@
 <link href="https:/GISering.github.io/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工作," />
+  <meta name="keywords" content="Android,Gradle," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊">
+<meta name="description" content="来泰安学习已经有半个月了，这里的生活是准军事化的，不太习惯，总感觉形式大于内容，各种不合理的安排不再吐槽了，总之很有“特色”、总之“罄竹难书”。好在我懂得自个儿找乐子，于是就接着研究手头的Android项目，代码撸起来！！！Google已经停止对Eclipse Android开发工具的更新支持，同时AndroidStudio已经发布到V2.2.3，从颜值到各项体验远远超过Eclipse。对我来说，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电力基础">
-<meta property="og:url" content="https://GISering.github.io/2016/10/09/电力基础/index.html">
+<meta property="og:title" content="AndroidStudio之入坑Gradle(1)">
+<meta property="og:url" content="https://GISering.github.io/2016/12/11/AndroidStudio之入坑Gradle1/index.html">
 <meta property="og:site_name" content="Oozie's Blog">
-<meta property="og:description" content="这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊">
-<meta property="og:updated_time" content="2016-10-09T14:41:44.000Z">
+<meta property="og:description" content="来泰安学习已经有半个月了，这里的生活是准军事化的，不太习惯，总感觉形式大于内容，各种不合理的安排不再吐槽了，总之很有“特色”、总之“罄竹难书”。好在我懂得自个儿找乐子，于是就接着研究手头的Android项目，代码撸起来！！！Google已经停止对Eclipse Android开发工具的更新支持，同时AndroidStudio已经发布到V2.2.3，从颜值到各项体验远远超过Eclipse。对我来说，">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gw1fapah9wo7zj30is09idgs.jpg">
+<meta property="og:updated_time" content="2016-12-13T10:39:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电力基础">
-<meta name="twitter:description" content="这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊">
+<meta name="twitter:title" content="AndroidStudio之入坑Gradle(1)">
+<meta name="twitter:description" content="来泰安学习已经有半个月了，这里的生活是准军事化的，不太习惯，总感觉形式大于内容，各种不合理的安排不再吐槽了，总之很有“特色”、总之“罄竹难书”。好在我懂得自个儿找乐子，于是就接着研究手头的Android项目，代码撸起来！！！Google已经停止对Eclipse Android开发工具的更新支持，同时AndroidStudio已经发布到V2.2.3，从颜值到各项体验远远超过Eclipse。对我来说，">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gw1fapah9wo7zj30is09idgs.jpg">
 
 
 
@@ -109,10 +111,10 @@
 
 
 
-  <link rel="canonical" href="https://GISering.github.io/2016/10/09/电力基础/"/>
+  <link rel="canonical" href="https://GISering.github.io/2016/12/11/AndroidStudio之入坑Gradle1/"/>
 
 
-  <title> 电力基础 | Oozie's Blog </title>
+  <title> AndroidStudio之入坑Gradle(1) | Oozie's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +244,7 @@
             
             
               
-                电力基础
+                AndroidStudio之入坑Gradle(1)
               
             
           </h1>
@@ -254,19 +256,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-09T22:39:17+08:00" content="2016-10-09">
-              2016-10-09
+            <time itemprop="dateCreated" datetime="2016-12-11T10:42:06+08:00" content="2016-12-11">
+              2016-12-11
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="https:/GISering.github.io/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="https:/GISering.github.io/2016/10/09/电力基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/电力基础/" itemprop="commentsCount"></span>
+                <a href="https:/GISering.github.io/2016/12/11/AndroidStudio之入坑Gradle1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/11/AndroidStudio之入坑Gradle1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -276,7 +297,7 @@
 
           
           
-         <span id="https:/GISering.github.io/2016/10/09/电力基础/"class="leancloud_visitors"  data-flag-title="电力基础">
+         <span id="https:/GISering.github.io/2016/12/11/AndroidStudio之入坑Gradle1/"class="leancloud_visitors"  data-flag-title="AndroidStudio之入坑Gradle(1)">
             &nbsp; | &nbsp; 阅读次数
             </span>
       
@@ -293,189 +314,43 @@
       
 
       
-        <p>这是刚进公司，部门给新员工作的电力基础知识培训时自己作的笔记，算是在脑海里有了个框架，以后的要学的东西还很多！！！😊</p>
+        <p>来泰安学习已经有半个月了，这里的生活是准军事化的，不太习惯，总感觉形式大于内容，各种不合理的安排不再吐槽了，总之很有“特色”、总之“罄竹难书”。好在我懂得自个儿找乐子，于是就接着研究手头的Android项目，代码撸起来！！！Google已经停止对Eclipse Android开发工具的更新支持，同时AndroidStudio已经发布到<code>V2.2.3</code>，从颜值到各项体验远远超过Eclipse。对我来说，改变最大的就是构建工具的转变<code>Ant-&gt;Gradle</code>，因为我着实在Gradle上，掉进了很多坑，从下载速度感人到各种由于Gradle版本不一致造成的错误实在让我捶胸顿足。这两天一直在填坑，弄清楚了不少问题，所以我想是时候把坑踏平成套路了🤔。</p>
 <a id="more"></a>
-<h1 id="1-输电"><a href="#1-输电" class="headerlink" title="1.输电"></a>1.输电</h1><h2 id="1-1-基础知识"><a href="#1-1-基础知识" class="headerlink" title="1.1.基础知识"></a>1.1.基础知识</h2><ol>
-<li>电力系统：由发、变、输、配、用电等设备和相应的辅助系统，按照规定的技术经济要求组成的一个统一的系统</li>
-<li>输电线路<ol>
-<li>主要作用：实现在负荷中心和电源中心的电能传输。</li>
-<li>分类:<ul>
-<li>按结构形式：架空线路、电缆线路、混合线路</li>
-<li>按电流性质：交流电、直流电</li>
-<li>按电压等级：特高压、超高压、高压</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>为什么采用<strong>高压输电</strong>：在输送功率不变的情况下，提高电压可以减少电流，从而可以降低电压降落和电能损耗，同时可以选择较细的导线，以节约电网投资。</li>
-<li>架空线路<ul>
-<li>基本组成：导线、避雷线、杆塔、绝缘子、金具</li>
-<li>基本概念：<ul>
-<li>杆塔高度、</li>
-<li>杆塔呼称高、</li>
-<li>档距、</li>
-<li>代表档距、</li>
-<li>耐张端</li>
-<li>导线换相</li>
-</ul>
-</li>
-<li>维护：巡视、大修、小修、导线弛度测量、绝缘子盐密度测量、接地电阻测量、零值瓷瓶测量、交叉跨越测量、接头测温、隐蔽工程开挖。</li>
-</ul>
-</li>
-<li>电缆线路<ol>
-<li>组成：导体、绝缘层、保护包皮</li>
-<li>分类：单芯、三芯、四芯</li>
-<li>维护：红外测温、测负荷及接地电流、电缆外套试验、避雷器带电测试、变频试验、线路参数试验等</li>
-</ol>
-</li>
-</ol>
-<h1 id="2-变电"><a href="#2-变电" class="headerlink" title="2.变电"></a>2.变电</h1><h1 id="3-配电"><a href="#3-配电" class="headerlink" title="3.配电"></a>3.配电</h1><h2 id="3-1基础知识"><a href="#3-1基础知识" class="headerlink" title="3.1基础知识"></a>3.1基础知识</h2><ol>
-<li><p>电压等级分类：</p>
-<ul>
-<li>特高压：1000kV及以上。百万伏级交流和正负800千伏直流。 </li>
-<li>超高压：330、500、750 kV。</li>
-<li>中压：3～35 kV。</li>
-<li>低压：0.4kV及以下。</li>
-</ul>
-</li>
-<li><p>配电网的定义：电力网中重要起分配电能作用的网络就称为配电网</p>
-<ul>
-<li>按电压等级来分</li>
-<li>按供电区功能来分</li>
-</ul>
-</li>
-<li><p>配电网的特点</p>
-<ul>
-<li>配网网络结构比较复杂</li>
-<li>配网设备数量巨大</li>
-<li>配网设备异动较为频繁</li>
-<li>配电管理包含电力线路的管理和变电设备的管理</li>
-<li>配网调度业务繁忙，</li>
-</ul>
-</li>
-<li>配电系统种类<ul>
-<li>一次变压的配电系统<ul>
-<li>只有一个变电所的一次变压系统</li>
-<li>拥有高压配电所的一次变压供配电系统</li>
-<li>高压深入负荷中心的一次变压供配电系统</li>
-</ul>
-</li>
-<li>两次变压的配电系统</li>
-<li>低压供配电系统</li>
-</ul>
-</li>
-<li>配电网供电基本要求：安全、可靠、优质、经济</li>
-</ol>
-<h2 id="3-2-常用电器设备"><a href="#3-2-常用电器设备" class="headerlink" title="3.2.常用电器设备"></a>3.2.常用电器设备</h2><ol>
-<li><strong>馈线：</strong>馈线是配电网中的一个术语，它可以指与任意配网节点相连接的支路，可以是馈入支路；</li>
-<li><strong>电力变压器：</strong>：变电所的核心设备，通过它将一种电压的交流电能转换成另一种电压的交流电能；</li>
-<li><strong>高压开断设备：</strong></li>
-<li><strong>高压断路器：</strong>带有强力灭弧装置的高压开关设备，用于供配电系统发生故障时与保护装置配合自动切断系统的短路电流；</li>
-<li><strong>隔离刀闸：</strong>隔离开关的主要功能是隔离电源，当它处于分闸状态时，有着明显的断口，使处于其后的高压母线、断路器等电力设备与电源或带电高压母线隔离，以保障检修工作的安全</li>
-<li><strong>高压负荷开关：</strong>高压负荷开关是一种介乎隔离开关与断路器之间的结构简单的高压电器，具有简单的灭弧装置，常用来分合负荷电流和较小的过负荷电流，但不能分断短路电流。</li>
-<li><strong>高压熔断器：</strong>配电网络中人为设置的最薄弱的元件。当其所在电路发生短路或长期过载时，它便因过热而熔断，并通过灭弧介质将熔断时产生的电弧熄灭，最终开断电路，以保护电力电路及其他的电气设备。</li>
-<li><strong>低压开关设备：</strong></li>
-<li><strong>互感器：</strong></li>
-<li><strong>成套电器：</strong><ol>
-<li>环网柜供电单元</li>
-<li>预装式变电站</li>
-<li>高压开关柜</li>
-<li>低压开关柜</li>
-</ol>
-</li>
-</ol>
-<h2 id="3-3-配电网络结构"><a href="#3-3-配电网络结构" class="headerlink" title="3.3.配电网络结构"></a>3.3.配电网络结构</h2><h3 id="3-3-1-网络结构分类"><a href="#3-3-1-网络结构分类" class="headerlink" title="3.3.1.网络结构分类"></a>3.3.1.网络结构分类</h3><ol>
-<li>放射式<ul>
-<li>单回路放射式</li>
-<li>双回路放射式</li>
-<li>带公共备用线的放射式网络结构</li>
-</ul>
-</li>
-<li>树干式<ul>
-<li>单回路树干式</li>
-<li>双回路树干式</li>
-</ul>
-</li>
-<li>环式</li>
-</ol>
-<h3 id="3-3-2-网络结构适用对象"><a href="#3-3-2-网络结构适用对象" class="headerlink" title="3.3.2.网络结构适用对象"></a>3.3.2.网络结构适用对象</h3><ol>
-<li>中压系统<ul>
-<li>对于城市非重要用户及郊区，可靠性要求不高，可采用树干式结构。<ul>
-<li>对负荷密度大，且供电要求高的用户可采用双电源双回路树干式或环式结构。</li>
-<li>对于提供双电源有困难，用户的供电可靠性要求又较高的情况，可采用放射式结构。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>低压系统：环式结构使用较少<ul>
-<li>对于单台设备容量较大或较重要场合，一般采用放射式结构。<ul>
-<li>对于非重要用电设备，用电性质相近，又便于线路敷设时，一般采用树干式结构。</li>
-<li>对于重要用电设备，可采用双电源双回路树干式结构或双电源双回路放射式结构。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="3-4-配电网络架构与敷设"><a href="#3-4-配电网络架构与敷设" class="headerlink" title="3.4.配电网络架构与敷设"></a>3.4.配电网络架构与敷设</h2><h2 id="3-5-配电业务管理"><a href="#3-5-配电业务管理" class="headerlink" title="3.5.配电业务管理"></a>3.5.配电业务管理</h2><ol>
-<li><p>两票三制：是电业安全生产保证体系的几项最基本的工作制度，是电力企业保人身、保电网、保设备的重要手段和措施。任何人为的责任事故，均可在其“两票三制”的执行上找到原因。</p>
-<ul>
-<li>两票：工作票、操作票</li>
-<li>三制：交接班制度、设备定期实验及轮换制度、巡回检查制度</li>
-</ul>
-</li>
-<li>配电巡视管理<ul>
-<li>定期巡视</li>
-<li>特殊性巡视</li>
-<li>夜间巡视</li>
-<li>故障性巡视</li>
-<li>监察性巡视</li>
-</ul>
-</li>
-<li>配电缺陷管理<ul>
-<li>危急缺陷：随时可能导致发生事故或危及人身安全的缺陷，必须尽快消除或采取必要的安全技术措施进行临时处理。–<strong>24小时内解决</strong></li>
-<li>重大缺陷：指缺陷比较严重，但设备仍可短期继续安全运行。该缺陷应在短期内消除，消除前应加强监视。–<strong>三个月内解决</strong></li>
-<li>一般缺陷：指对近期安全运行影响不大的缺陷。可列入年、季检修计划或日常维护工作中去消除。</li>
-</ul>
-</li>
-</ol>
-<h1 id="4-数据采集"><a href="#4-数据采集" class="headerlink" title="4.数据采集"></a>4.数据采集</h1><ol>
-<li>常规数据采集</li>
-<li>滚动运维采集</li>
-<li><p>营配贯通：包括运检、营销相关设备的采集和在电网GIS平台、PMS2.0支撑工具，营销业务系统等系统给的录入</p>
-<ul>
-<li>运检财路设备：低压线路、低压电缆、低压站房、低压站内设备。</li>
-<li>营销采录设备：高压用户类、营销资源类。(收钱的)</li>
-</ul>
-</li>
-<li><p>地下电缆采集</p>
-<ul>
-<li>主网数据采集：发电数据、输电数据，35KV及以上</li>
-<li>配网数据采集：10KV及以上</li>
-</ul>
-</li>
-</ol>
-<h1 id="5-研发"><a href="#5-研发" class="headerlink" title="5.研发"></a>5.研发</h1><blockquote>
-<p>主要应对电网数据采集与系统实施运维的业务需求</p>
+<p>这里先总结一下有关Gradle安装、配置以及在AnddroidStudio中我遇到的各类问题。</p>
+<p>#Gradle</p>
+<p>##简单认识</p>
+<blockquote>
+<p>Gradle是基于Ant和Maven概念的项目自动化构建工具，使用一种基于Groovy的特定领域语言(DSL)来声明项目设置——Bing</p>
 </blockquote>
-<h2 id="5-1-研发工具的业务内容"><a href="#5-1-研发工具的业务内容" class="headerlink" title="5.1.研发工具的业务内容"></a>5.1.研发工具的业务内容</h2><ol>
-<li><p>地下电缆——数据采集</p>
+<p>Google选择Gradle作为AndroidStudio的构建工具而放弃Ant，从我浅薄的认识来说，Gradle综合了Ant和Maven的优点：不仅具备Ant的灵活性，也具备Maven的生命周期管理能力，而且它的构建脚本简单，有许多开箱即用的插件。</p>
+<p>##Gradle Wrapper<br>说到Gradle就不得不说Gradle Wrapper，这厮也是个大坑啊！字面意义来看是“Gradle包装器”，它的设计目的是为了让不同的项目可以独立配置自己的Gradle版本和运行环境，它存在于Android项目的根目录中的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── app</div><div class="line">├── build.gradle</div><div class="line">├── gradle</div><div class="line">│   └── wrapper</div><div class="line">│       ├── gradle-wrapper.jar</div><div class="line">│       └── gradle-wrapper.properties</div><div class="line">├── gradle.properties</div><div class="line">├── gradlew</div><div class="line">├── gradlew.bat</div><div class="line">└── settings.gradle</div></pre></td></tr></table></figure>
+<p>其中wrapper文件下的文件和<em>gradlew，gradlew.bat</em>都与gradle wapper密切相关：</p>
+<ul>
+<li><p>gradle-wrapper.properties是本项目gradle wrapper的配置文件，内容如下:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">distributionBase=GRADLE_USER_HOME</div><div class="line">distributionPath=wrapper/dists</div><div class="line">zipStoreBase=GRADLE_USER_HOME</div><div class="line">zipStorePath=wrapper/dists</div><div class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip</div></pre></td></tr></table></figure>
+</li>
+<li><p>gradlew是linux下的执行脚本，gradlew.bat是windows下的执行脚本</p>
+</li>
+</ul>
+<p>##安装位置<br>作为中度强迫症患者，我喜欢弄清楚安装的每个软件都对我电脑做了什么！尤其是它们的安装位置和安装目录，不然心里不踏实😂。通过“找一找”发现，默认情况下Gradle会在两处安家：</p>
 <ol>
-<li>地下电缆采集移动终端：GPS、物联网、RFID</li>
-<li>地下电缆精益化管理工具</li>
-</ol>
+<li>AndroidStudio的安装目录(<strong>A处</strong>)<code>&quot;安装路径/AndroidStudio/Gradle/&quot;</code> </li>
+<li>用户的家目录(<strong>B处</strong>)在：<ul>
+<li>Mac: <code>&quot;/Users/username/.gradle/wrapper/dists&quot;</code></li>
+<li>Windows: <code>&quot;C:\Users\username\gradle\wrapper\dists</code>“ </li>
+</ul>
 </li>
-<li><p>营配贯通——PMS2.0运维</p>
+</ol>
+<p>##开始填坑</p>
+<p>###为什么要在两处都安装Gradle?<br>下图是AS中Gradle配置窗口，默认选择官方也推荐选择“Use default gradle wrapper”：<br><img src="http://ww1.sinaimg.cn/large/006tNc79gw1fapah9wo7zj30is09idgs.jpg" alt=""></p>
 <ol>
-<li>营配贯通全方位辅助工具：变电站、公线、专线、共变、专变、配变到户</li>
-<li>乡镇供电所图数治理工具</li>
+<li><strong>A处</strong>：默认情况下只有一个版本的Gradle，安装时间在是用AS建立第一个Project时下载的（这也是造成本地创建第一个项目时很慢的原因），版本号我判断应该是由我们所下载的AS版本决定的；当我们每次新建项目时，会根据该目录下的Gradle版本来创建Gradle配置文件，同样项目的Gradle wrapper版本也是由该版本决定的，其版本号具体配置在gradle-wrapper.properties文件中的<em>distributionUrl</em>字段中，可以看到这是一个URL地址。    </li>
+<li><strong>B处</strong>：如果你曾多次导入从别处获得的Android项目，你会发现<strong>B处</strong>的目录下会有多个版本的Gradle。当我们导入从开源社区下载的Android项目时，AS会选择根据默认项“Use default gradle wrapper”，即执行gradle wrapper的构建命令：首先判断<strong>B处</strong>是否存在在gradle-wrapper.properties文件中的<em>distributionUrl</em>字段中定义的Gradle版本，如果没有，就会根据URL地址下载到<strong>B</strong>处。这也是为什么我们每次导入项目时，会如此缓慢的原因。<h3 id="AS-是如何判断B处是否存在它需要的Gradle版本的"><a href="#AS-是如何判断B处是否存在它需要的Gradle版本的" class="headerlink" title="AS    是如何判断B处是否存在它需要的Gradle版本的"></a>AS    是如何判断<strong>B</strong>处是否存在它需要的Gradle版本的</h3></li>
 </ol>
-</li>
-<li>GIS平台运维——系统建设<ol>
-<li>基于国网GIS平台的车载GPS监控系统</li>
-<li>GIS实用化管控工具</li>
-</ol>
-</li>
-</ol>
+<p>但是我发现，AndroidStudio的安装目录下也有一个Gradle文件夹(这里称之为<strong>B处</strong>)，里面也是安装好的Gradle，这两处所安装的Gradle里的核心可执行文件是一致的没有区别，只是A出比B处多了<code>doc</code>和<code>example</code>等无关紧要的文件。既然如此，为什么还要放置两处呢？抱着不见棺材不掉泪的精神，我阅读了<a href="https://www.jetbrains.com/help/idea/2016.3/gradle-2.html" target="_blank" rel="external">Intelli IDEA官方文档</a>，终于明白了这样做的目的所在，更准确地说是找出了出现这种现象的缘由。</p>
+<p>##使用命令</p>
+<p>宿舍只提供了一根网线，需要在PC上安装它提供的客户端才能“畅游”Internet，但没有Mac版的，没有Mac版的，没有Mac版的☹️！所以当听说网速很感人时，我的内心是喜悦的~~~无网不欢的日子我还是要坚持下去，于是我只能用我的流量</p>
 
       
     </div>
@@ -498,7 +373,9 @@
       
         <div class="post-tags">
           
-            <a href="https:/GISering.github.io/tags/工作/" rel="tag">#工作</a>
+            <a href="https:/GISering.github.io/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="https:/GISering.github.io/tags/Gradle/" rel="tag">#Gradle</a>
           
         </div>
       
@@ -507,13 +384,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="https:/GISering.github.io/2016/11/23/我的十一月/" rel="next" title="我的十一月">
+                <i class="fa fa-chevron-left"></i> 我的十一月
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="https:/GISering.github.io/2016/10/10/PHP学习笔记/" rel="prev" title="PHP学习笔记">
-                PHP学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,8 +416,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/09/电力基础/"
-           data-title="电力基础" data-url="https://GISering.github.iohttps://GISering.github.io/2016/10/09/电力基础/">
+      <div class="ds-thread" data-thread-key="2016/12/11/AndroidStudio之入坑Gradle1/"
+           data-title="AndroidStudio之入坑Gradle(1)" data-url="https://GISering.github.iohttps://GISering.github.io/2016/12/11/AndroidStudio之入坑Gradle1/">
       </div>
     
   </div>
@@ -658,7 +535,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-输电"><span class="nav-number">1.</span> <span class="nav-text">1.输电</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.基础知识</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-变电"><span class="nav-number">2.</span> <span class="nav-text">2.变电</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-配电"><span class="nav-number">3.</span> <span class="nav-text">3.配电</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1基础知识"><span class="nav-number">3.1.</span> <span class="nav-text">3.1基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-常用电器设备"><span class="nav-number">3.2.</span> <span class="nav-text">3.2.常用电器设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-配电网络结构"><span class="nav-number">3.3.</span> <span class="nav-text">3.3.配电网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-网络结构分类"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.3.1.网络结构分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-网络结构适用对象"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.3.2.网络结构适用对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-配电网络架构与敷设"><span class="nav-number">3.4.</span> <span class="nav-text">3.4.配电网络架构与敷设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-配电业务管理"><span class="nav-number">3.5.</span> <span class="nav-text">3.5.配电业务管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-数据采集"><span class="nav-number">4.</span> <span class="nav-text">4.数据采集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-研发"><span class="nav-number">5.</span> <span class="nav-text">5.研发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-研发工具的业务内容"><span class="nav-number">5.1.</span> <span class="nav-text">5.1.研发工具的业务内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AS-是如何判断B处是否存在它需要的Gradle版本的"><span class="nav-number">1.</span> <span class="nav-text">AS    是如何判断B处是否存在它需要的Gradle版本的</span></a></li></ol></div>
             
           </div>
         </section>
