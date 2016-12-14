@@ -88,7 +88,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gw1fapah9wo7zj30is09idgs.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gw1faphu6tpupj30eh07twf2.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79gw1faphktg77xj30eo09pmxv.jpg">
-<meta property="og:updated_time" content="2016-12-14T09:13:39.000Z">
+<meta property="og:updated_time" content="2016-12-14T09:21:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio之入坑Gradle(1)">
 <meta name="twitter:description" content="来泰安学习已经有半个月了，这里的生活是准军事化的，不太习惯，总感觉形式大于内容，各种不合理的安排不再吐槽了，总之很有“特色”、总之“罄竹难书”。好在我懂得自个儿找乐子，于是就接着研究手头的Android项目，代码撸起来！！！Google已经停止对Eclipse Android开发工具的更新支持，同时AndroidStudio已经发布到V2.2.3，从颜值到各项体验远远超过Eclipse。对我来说，">
@@ -361,7 +361,7 @@
 <p>当项目是从开源社区获得的，这就有很大可能该项目所使用的Gradle版本和本地配置的版本不一致，如果使用Gradle命令可能就会报错；这时，Gradle wapper出现了，我们可以在Shell终端里将目录切换到项目的根目录下，使用<code>gradlew</code>命令来构建项目，使用<code>gradlew</code>的方式和<code>gradle</code>一模一样, 例如通过<code>gradlew tasks</code>来查看所有的任务。事实上，执行<code>gradlew</code>命令的时候，gradlew会委托gradle命令来做相应的事情，所以<code>gradlew</code>真的只是一个壳而已。    </p>
 <p>当执行<code>gradlew</code>的时候，wrapper会检查当前机器是否已经安装了对应版本的gradle，如果安装了那么<code>gradlew</code>就会委托gradle执行用户输入的命令。如果还未安装的话，那么首先会自动帮我们从gradle repository下载安装。当然你也可以在配置文件中指定想要下载的server来替代默认的gradle repo。    </p>
 <blockquote>
-<p>宿舍只提供了一根网线，需要在PC上安装它提供的客户端才能“畅游”Internet，但没有Mac版的，没有Mac版的，没有Mac版的☹️！所以当听说网速很感人时，我的内心是喜悦的~~~无网不欢的日子我还是要坚持下去，于是我只能用我的流量，这月过去13天已经用了3个G了😱！！！</p>
+<p>宿舍只提供了一根网线，需要在PC上安装它提供的客户端才能“畅游”Internet，但没有Mac版的，没有Mac版的，没有Mac版的☹️！所以当听说网速很感人时，我的内心是喜悦的~~~无网不欢的日子我还是要坚持下去，于是我只能用我的流量，这月过去13天却已经用了3个G了😱！！！</p>
 </blockquote>
 
       
